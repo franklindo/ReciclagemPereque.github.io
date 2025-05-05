@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reciclagem - Completo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 10px;
+        }
+        
+        .container {
+            display: none;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        h1, h2, h3 {
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        button, .btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .btn-primary {
+            background-color: #27ae60;
+        }
+        
+        .btn-secondary {
+            background-color: #3498db;
+        }
+        
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        
+        .btn-tertiary {
+            background-color: #e67e22;
+        }
+        
+        .btn-dark {
+            background-color: #2c3e50;
+        }
+        
+        /* Menu Principal */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Telas de Clientes e Materiais */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .card {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Tela de Cadastro */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* Tabelas */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .data-table th {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .data-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .grand-total {
+            font-weight: bold;
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: right;
+        }
+        
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 6px;
+            cursor: pointer;
+        }
+        
+        .edit-btn {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 6px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        
+        /* Relatórios */
+        .report-section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .report-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .command-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .command-card.venda {
+            border-left-color: #e74c3c;
+        }
+        
+        .command-info {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .command-items {
+            margin-left: 15px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .menu-grid, .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tela 0 - Menu Principal -->
+    <div id="screen0" class="container">
+        <h1>Andreia Reciclagem</h1>
+        <div class="menu-grid">
+            <button class="btn-primary" onclick="startNewCommand('compra')">COMPRA</button>
+            <button class="btn-danger" onclick="startNewCommand('venda')">VENDA</button>
+            <button class="btn-tertiary" onclick="showScreen(4)">RELATÓRIO DIÁRIO</button>
+            <button class="btn-secondary" onclick="showScreen(5)">RELATÓRIO MENSAL</button>
+            <button class="btn-dark" onclick="showScreen(6)">PREÇOS MATERIAIS</button>
+            <button class="btn-dark" onclick="showScreen(7)">CADASTRO MATERIAIS</button>
+            <button class="btn-dark" onclick="showScreen(8)">DESPESAS</button>
+        </div>
+    </div>
+
+    <!-- Tela 1 - Clientes -->
+    <div id="screen1" class="container">
+        <h1 id="operationTitle"></h1>
+        <h3>Comanda #<span id="commandNumber"></span></h3>
+        <div class="grid-container" id="clientGrid"></div>
+        <button onclick="cancelCommand(); showScreen(0)" class="btn-secondary">Cancelar</button>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+    
+    <!-- Tela 2 - Materiais -->
+    <div id="screen2" class="container">
+        <h1 id="clientTitle"></h1>
+        <h3>Comanda #<span id="commandNumber2"></span></h3>
+        <div class="grid-container" id="materialGrid"></div>
+        <button onclick="showScreen(1)" class="btn-secondary">Voltar</button>
+    </div>
+    
+    <!-- Tela 3 - Cadastro -->
+    <div id="screen3" class="container">
+        <h1 id="materialTitle"></h1>
+        <h3>Comanda #<span id="commandNumber3"></span></h3>
+        
+        <div class="form-group">
+            <label>Operação:</label>
+            <input type="text" id="operationTypeDisplay" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label>Cliente:</label>
+            <input type="text" id="currentClientDisplay" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label>Material:</label>
+            <input type="text" id="materialName" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label>Valor Unitário (R$/kg):</label>
+            <input type="number" id="materialValue" step="0.01" min="0">
+            <small style="color: #666;">Clique para editar o preço apenas nesta operação</small>
+        </div>
+        
+        <div class="form-group">
+            <label>Peso (kg):</label>
+            <input type="number" id="materialWeight" step="0.01" min="0">
+        </div>
+        
+        <button id="addBtn">Adicionar à Comanda</button>
+        
+        <div style="display: none;" id="materialsList">
+            <h3>Itens da Comanda</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Peso</th>
+                        <th>Valor Unit.</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="materialsTableBody"></tbody>
+            </table>
+            <div class="grand-total">
+                Total Comanda: R$ <span id="grandTotalValue">0.00</span>
+            </div>
+        </div>
+        
+        <button id="finalizeBtn" class="btn-primary" style="display: none;">Finalizar Comanda</button>
+        <button onclick="showScreen(2)" class="btn-secondary">Voltar</button>
+    </div>
+
+    <!-- Tela 4 - Relatório Diário -->
+    <div id="screen4" class="container">
+        <h1>Relatório Diário</h1>
+        <div id="dailyReportContent"></div>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+
+    <!-- Tela 5 - Relatório Mensal -->
+    <div id="screen5" class="container">
+        <h1>Relatório Mensal</h1>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+        <div class="form-group">
+            <label>Selecione o Mês:</label>
+            <input type="month" id="monthSelector">
+        </div>
+        <button onclick="generateMonthlyReport()" class="btn-tertiary">Gerar Relatório</button>
+        <div id="monthlyReportContent" style="margin-top: 20px;"></div>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+
+    <!-- Tela 6 - Preços dos Materiais -->
+    <div id="screen6" class="container">
+        <h1>Preços dos Materiais</h1>
+        <p style="text-align: center; margin-bottom: 15px; color: #666;">
+            Edite os preços padrão que serão usados em todas as operações
+        </p>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Preço Compra (R$/kg)</th>
+                    <th>Preço Venda (R$/kg)</th>
+                </tr>
+            </thead>
+            <tbody id="pricesTableBody"></tbody>
+        </table>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+
+    <!-- Tela 7 - Cadastro de Materiais -->
+    <div id="screen7" class="container">
+        <h1>Cadastro de Materiais</h1>
+        
+        <div class="form-group">
+            <label>Nome do Material:</label>
+            <input type="text" id="newMaterialName" placeholder="Ex: Cobre, Alumínio, etc.">
+        </div>
+        
+        <div class="form-group">
+            <label>Ícone/Símbolo:</label>
+            <input type="text" id="newMaterialIcon" placeholder="Ex: ♻, 🔌, etc." maxlength="2">
+        </div>
+        
+        <div class="form-group">
+            <label>Preço de Compra (R$/kg):</label>
+            <input type="number" id="newMaterialBuyPrice" step="0.01" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label>Preço de Venda (R$/kg):</label>
+            <input type="number" id="newMaterialSellPrice" step="0.01" min="0">
+        </div>
+        
+        <button onclick="addNewMaterial()" class="btn-primary">Cadastrar Material</button>
+        
+        <h3 style="margin-top: 20px;">Materiais Cadastrados</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Ícone</th>
+                    <th>Compra</th>
+                    <th>Venda</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="materialsTable"></tbody>
+        </table>
+        
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+        <button onclick="showPasswordPrompt()" class="btn-danger" style="margin-top: 20px;">
+        ZERAR TODOS OS DADOS
+        </button>
+    </div>
+
+    <!-- Tela 8 - Cadastro de Despesas -->
+    <div id="screen8" class="container">
+        <h1>Cadastro de Despesas</h1>
+        
+        <div class="form-group">
+            <label>Descrição da Despesa:</label>
+            <input type="text" id="expenseDescription" placeholder="Ex: Aluguel, Energia, etc.">
+        </div>
+        
+        <div class="form-group">
+            <label>Valor (R$):</label>
+            <input type="number" id="expenseValue" step="0.01" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label>Data:</label>
+            <input type="date" id="expenseDate">
+        </div>
+        
+        <button onclick="saveExpense()" class="btn-primary">Salvar Despesa</button>
+        
+        <h3 style="margin-top: 20px;">Despesas Cadastradas</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="expensesTable"></tbody>
+        </table>
+        
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+
+    <script>
+        // Dados iniciais
+        let materials = JSON.parse(localStorage.getItem('reciclagemMaterials')) || [
+            { id: 1, name: 'Lata', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
+            { id: 2, name: 'Ferro', icon: '-', buyPrice: 0.40, sellPrice: 0.70 },
+            { id: 3, name: 'Perfil', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
+            { id: 4, name: 'Chapa', icon: '-', buyPrice: 4.0, sellPrice: 8.0 },
+            { id: 5, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
+            { id: 6, name: 'Bloco', icon: '-', buyPrice: 2.0, sellPrice: 7.5 },
+            { id: 7, name: 'Fio Insta', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
+            { id: 8, name: 'Fio Cabo', icon: '-', buyPrice: 15.0, sellPrice: 37.0 },
+            { id: 9, name: 'Fio Misto', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
+            { id: 10, name: 'Garimpo', icon: '-', buyPrice: 1.0, sellPrice: 3.0 },
+            { id: 11, name: 'Bateria', icon: '-', buyPrice: 2.50, sellPrice: 3.20 },
+            { id: 12, name: 'Aro', icon: '-', buyPrice: 2.0, sellPrice: 7.0 },
+            { id: 13, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
+            { id: 14, name: 'Roda', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
+            { id: 15, name: 'Chumbo', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
+            { id: 16, name: 'C1', icon: '-', buyPrice: 35.0, sellPrice: 46.0 },
+            { id: 17, name: 'C2', icon: '-', buyPrice: 32.0, sellPrice: 42.0 },
+            { id: 18, name: 'Metal', icon: '-', buyPrice: 12.0, sellPrice: 25.0 },
+            { id: 19, name: 'Fio PP', icon: '-', buyPrice: 5.0, sellPrice: 12.0 },
+            { id: 20, name: 'Inox', icon: '-', buyPrice: 2.50, sellPrice: 5.0 },
+            { id: 21, name: 'Motor', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
+            { id: 22, name: 'Outros 520', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
+            { id: 23, name: 'Oleo', icon: '-', buyPrice: 1.0, sellPrice: 2.5 }
+        ];
+
+        let clientsData = JSON.parse(localStorage.getItem('reciclagemData')) || {
+            1: { clientName: "Cliente 1" },
+            2: { clientName: "Cliente 2" },
+            3: { clientName: "Cliente 3" },
+            4: { clientName: "Cliente 4" }
+        };
+        
+        let commands = JSON.parse(localStorage.getItem('reciclagemCommands')) || [];
+        let nextCommandNumber = JSON.parse(localStorage.getItem('nextCommandNumber')) || 1;
+        let nextMaterialId = materials.length > 0 ? Math.max(...materials.map(m => m.id)) + 1 : 1;
+        let expenses = JSON.parse(localStorage.getItem('reciclagemExpenses')) || [];
+        let nextExpenseId = expenses.length > 0 ? Math.max(...expenses.map(e => e.id)) + 1 : 1;
+        let unfinishedCommands = JSON.parse(localStorage.getItem('reciclagemUnfinishedCommands')) || {};
+
+        // Variáveis da comanda atual
+        let currentCommand = null;
+        let currentOperation = null;
+        let currentClient = null;
+        let currentMaterial = null;
+        let editingPrice = false;
+
+        // Inicia uma nova operação (compra ou venda)
+        function startNewCommand(operationType) {
+            currentOperation = operationType;
+            currentCommand = null;
+            editingPrice = false;
+            
+            document.getElementById('operationTitle').textContent = 
+                `${operationType.toUpperCase()} - Selecione o Cliente`;
+            
+            showScreen(1);
+        }
+        
+        // Atualiza a exibição do número da comanda
+        function updateCommandDisplay() {
+            if (currentCommand) {
+                document.getElementById('commandNumber').textContent = currentCommand.number;
+                document.getElementById('commandNumber2').textContent = currentCommand.number;
+                document.getElementById('commandNumber3').textContent = currentCommand.number;
+                document.getElementById('operationTypeDisplay').value = currentOperation.toUpperCase();
+            }
+        }
+        
+        // Mostra a tela solicitada
+        function showScreen(screenNumber) {
+            document.querySelectorAll('.container').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            document.getElementById('screen' + screenNumber).style.display = 'block';
+            
+            if (screenNumber === 0) {
+                // Menu principal
+            } else if (screenNumber === 1) {
+                updateClientScreen();
+            } else if (screenNumber === 2) {
+                updateMaterialsScreen();
+            } else if (screenNumber === 3) {
+                updateMaterialsList();
+            } else if (screenNumber === 4) {
+                generateDailyReport();
+            } else if (screenNumber === 5) {
+                const today = new Date();
+                document.getElementById('monthSelector').value = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
+            } else if (screenNumber === 6) {
+                updatePricesTable();
+            } else if (screenNumber === 7) {
+                updateMaterialsTable();
+            } else if (screenNumber === 8) {
+                document.getElementById('expenseDate').value = new Date().toISOString().split('T')[0];
+                updateExpensesTable();
+            }
+        }
+
+        // Função para salvar despesa
+        function saveExpense() {
+            const description = document.getElementById('expenseDescription').value.trim();
+            const value = parseFloat(document.getElementById('expenseValue').value);
+            const date = document.getElementById('expenseDate').value;
+            
+            if (!description || isNaN(value) || value <= 0) {
+                alert("Preencha todos os campos corretamente!");
+                return;
+            }
+            
+            const newExpense = {
+                id: nextExpenseId++,
+                description: description,
+                value: value,
+                date: date
+            };
+            
+            expenses.push(newExpense);
+            localStorage.setItem('reciclagemExpenses', JSON.stringify(expenses));
+            
+            document.getElementById('expenseDescription').value = '';
+            document.getElementById('expenseValue').value = '';
+            
+            updateExpensesTable();
+        }    
+        
+        // Função para atualizar a tabela de despesas
+        function updateExpensesTable() {
+            const tableBody = document.getElementById('expensesTable');
+            tableBody.innerHTML = '';
+            
+            expenses.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            expenses.forEach((expense, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${expense.date}</td>
+                    <td>${expense.description}</td>
+                    <td>R$ ${expense.value.toFixed(2)}</td>
+                    <td><button class="remove-btn" onclick="removeExpense(${index})">X</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Função para remover despesa
+        function removeExpense(index) {
+            if (confirm(`Tem certeza que deseja remover a despesa "${expenses[index].description}"?`)) {
+                expenses.splice(index, 1);
+                localStorage.setItem('reciclagemExpenses', JSON.stringify(expenses));
+                updateExpensesTable();
+            }
+        }
+
+        // Atualiza a tela de clientes
+        function updateClientScreen() {
+            const grid = document.getElementById('clientGrid');
+            grid.innerHTML = '';
+            
+            for (const [clientId, clientData] of Object.entries(clientsData)) {
+                const clientDiv = document.createElement('div');
+                clientDiv.className = 'card';
+                
+                const hasUnfinishedCommand = unfinishedCommands[clientId] && 
+                                          !unfinishedCommands[clientId].finalized;
+                
+                if (hasUnfinishedCommand) {
+                    const badge = document.createElement('div');
+                    badge.className = 'badge';
+                    badge.textContent = '!';
+                    clientDiv.appendChild(badge);
+                }
+                
+                clientDiv.innerHTML += `<h3>${clientData.clientName}</h3>`;
+                
+                clientDiv.onclick = () => {
+                    currentClient = parseInt(clientId);
+                    
+                    if (unfinishedCommands[clientId] && !unfinishedCommands[clientId].finalized) {
+                        currentCommand = unfinishedCommands[clientId];
+                    } else {
+                        currentCommand = {
+                            number: nextCommandNumber++,
+                            operation: currentOperation,
+                            clientId: currentClient,
+                            clientName: clientData.clientName,
+                            date: new Date().toISOString().split('T')[0],
+                            time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+                            timestamp: new Date().getTime(),
+                            items: [],
+                            finalized: false
+                        };
+                        
+                        unfinishedCommands[clientId] = currentCommand;
+                        localStorage.setItem('nextCommandNumber', nextCommandNumber);
+                    }
+                    
+                    document.getElementById('currentClientDisplay').value = clientData.clientName;
+                    updateCommandDisplay();
+                    showScreen(2);
+                };
+                
+                grid.appendChild(clientDiv);
+            }
+            
+            localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+        }
+        
+        // Atualiza a tela de materiais
+        function updateMaterialsScreen() {
+            document.getElementById('clientTitle').textContent = 
+                `${currentOperation.toUpperCase()} - ${currentCommand.clientName}`;
+                
+            const grid = document.getElementById('materialGrid');
+            grid.innerHTML = '';
+            
+            materials.forEach(mat => {
+                const btn = document.createElement('div');
+                btn.className = 'card';
+                btn.innerHTML = `
+                    <div style="font-size:24px;">${mat.icon}</div>
+                    <div>${mat.name}</div>
+                    <div style="font-size:12px;margin-top:5px;">
+                        ${currentOperation === 'compra' ? 'Compra: R$ ' + mat.buyPrice.toFixed(2) : 'Venda: R$ ' + mat.sellPrice.toFixed(2)}
+                    </div>
+                `;
+                
+                btn.onclick = () => {
+                    currentMaterial = mat;
+                    showScreen(3);
+                    document.getElementById('materialTitle').textContent = 
+                        `${currentOperation.toUpperCase()} - ${mat.name}`;
+                    document.getElementById('materialName').value = mat.name;
+                    
+                    const price = currentOperation === 'compra' ? mat.buyPrice : mat.sellPrice;
+                    document.getElementById('materialValue').value = price.toFixed(2);
+                    
+                    document.getElementById('materialValue').readOnly = false;
+                    document.getElementById('materialValue').style.backgroundColor = '';
+                    
+                    document.getElementById('materialWeight').value = '';
+                    document.getElementById('materialWeight').focus();
+                };
+                
+                grid.appendChild(btn);
+            });
+        }
+        
+        // Atualiza a lista de materiais da comanda
+        function updateMaterialsList() {
+            const tableBody = document.getElementById('materialsTableBody');
+            tableBody.innerHTML = '';
+            
+            let grandTotal = 0;
+            
+            currentCommand.items.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.weight.toFixed(2)} kg</td>
+                    <td>R$ ${item.value}</td>
+                    <td>R$ ${item.total}</td>
+                    <td><button class="remove-btn" onclick="removeItem(${index})">X</button></td>
+                `;
+                tableBody.appendChild(row);
+                grandTotal += parseFloat(item.total);
+            });
+            
+            document.getElementById('grandTotalValue').textContent = grandTotal.toFixed(2);
+            
+            const listDiv = document.getElementById('materialsList');
+            const finalizeBtn = document.getElementById('finalizeBtn');
+            
+            if (currentCommand.items.length > 0) {
+                listDiv.style.display = 'block';
+                finalizeBtn.style.display = 'block';
+            } else {
+                listDiv.style.display = 'none';
+                finalizeBtn.style.display = 'none';
+            }
+        }
+        
+        // Remove um item da comanda
+        function removeItem(index) {
+            currentCommand.items.splice(index, 1);
+            updateMaterialsList();
+        }
+        
+        // Finaliza a comanda atual
+        function finalizeCommand() {
+            if (currentCommand.items.length === 0) {
+                alert("Adicione pelo menos um item à comanda!");
+                return;
+            }
+            
+            currentCommand.finalized = true;
+            commands.push(JSON.parse(JSON.stringify(currentCommand)));
+            
+            if (unfinishedCommands[currentCommand.clientId]) {
+                delete unfinishedCommands[currentCommand.clientId];
+            }
+            
+            localStorage.setItem('reciclagemCommands', JSON.stringify(commands));
+            localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+            
+            alert(`Comanda #${currentCommand.number} finalizada com sucesso!\nTotal: R$ ${document.getElementById('grandTotalValue').textContent}`);
+            
+            currentCommand = null;
+            currentOperation = null;
+            currentClient = null;
+            currentMaterial = null;
+            
+            showScreen(0);
+        }
+
+        // Gera relatório diário
+        function generateDailyReport() {
+            const today = new Date().toISOString().split('T')[0];
+            const reportContent = document.getElementById('dailyReportContent');
+            reportContent.innerHTML = '';
+            
+            const dailyCommands = commands.filter(c => c.date === today && c.finalized);
+            
+            if (dailyCommands.length === 0) {
+                reportContent.innerHTML = '<p>Nenhuma comanda registrada hoje.</p>';
+                return;
+            }
+            
+            const operations = {
+                compra: { commands: [], total: 0 },
+                venda: { commands: [], total: 0 }
+            };
+            
+            dailyCommands.forEach(command => {
+                const commandTotal = command.items.reduce((sum, item) => sum + parseFloat(item.total), 0);
+                operations[command.operation].commands.push(command);
+                operations[command.operation].total += commandTotal;
+            });
+            
+            for (const [operationType, data] of Object.entries(operations)) {
+                if (data.commands.length > 0) {
+                    const section = document.createElement('div');
+                    section.className = 'report-section';
+                    
+                    const header = document.createElement('div');
+                    header.className = 'report-header';
+                    header.innerHTML = `<h2 style="color: white;">${operationType.toUpperCase()}S - Total: R$ ${data.total.toFixed(2)}</h2>`;
+                    section.appendChild(header);
+                    
+                    data.commands.forEach(command => {
+                        const commandTotal = command.items.reduce((sum, item) => sum + parseFloat(item.total), 0);
+                        
+                        const card = document.createElement('div');
+                        card.className = `command-card ${operationType}`;
+                        
+                        let itemsHtml = '';
+                        command.items.forEach(item => {
+                            itemsHtml += `
+                                <div>${item.name} - ${item.weight}kg x R$ ${item.value} = R$ ${item.total}</div>
+                            `;
+                        });
+                        
+                        card.innerHTML = `
+                            <div class="command-info">
+                                ${command.time} - Comanda #${command.number} - ${command.clientName} - Total: R$ ${commandTotal.toFixed(2)}
+                            </div>
+                            <div class="command-items">
+                                ${itemsHtml}
+                            </div>
+                        `;
+                        
+                        section.appendChild(card);
+                    });
+                    
+                    reportContent.appendChild(section);
+                }
+            }
+        }        
+            
+        // Gera relatório mensal
+        function generateMonthlyReport() {
+            const month = document.getElementById('monthSelector').value;
+            const reportContent = document.getElementById('monthlyReportContent');
+            reportContent.innerHTML = '';
+            
+            const monthlyCommands = commands
+                .filter(c => c.date.startsWith(month) && c.finalized)
+                .sort((a, b) => b.timestamp - a.timestamp);
+            
+            if (monthlyCommands.length === 0) {
+                reportContent.innerHTML = `<p>Nenhuma comanda registrada em ${month}.</p>`;
+                return;
+            }
+            
+            const materialsSummary = {};
+            
+            monthlyCommands.forEach(command => {
+                const operation = command.operation;
+                
+                command.items.forEach(item => {
+                    const key = `${item.name}_${operation}`;
+                    
+                    if (!materialsSummary[key]) {
+                        materialsSummary[key] = {
+                            name: item.name,
+                            operation: operation,
+                            totalWeight: 0,
+                            totalValue: 0
+                        };
+                    }
+                    
+                    materialsSummary[key].totalWeight += parseFloat(item.weight);
+                    materialsSummary[key].totalValue += parseFloat(item.total);
+                });
+            });
+            
+            const section = document.createElement('div');
+            section.className = 'report-section';
+            
+            const header = document.createElement('div');
+            header.className = 'report-header';
+            header.innerHTML = `<h2 style="color: white;">RELATÓRIO POR MATERIAL E OPERAÇÃO - ${month}</h2>`;
+            section.appendChild(header);
+            
+            const table = document.createElement('table');
+            table.className = 'data-table';
+            
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>Material</th>
+                    <th>Operação</th>
+                    <th>Total Peso (kg)</th>
+                    <th>Total Valor (R$)</th>
+                    <th>Preço Médio (R$/kg)</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+            
+            const tbody = document.createElement('tbody');
+            
+            const groupedMaterials = {};
+            
+            Object.values(materialsSummary).forEach(item => {
+                if (!groupedMaterials[item.name]) {
+                    groupedMaterials[item.name] = [];
+                }
+                groupedMaterials[item.name].push(item);
+            });
+            
+            const sortedMaterialNames = Object.keys(groupedMaterials).sort();
+            
+            sortedMaterialNames.forEach(materialName => {
+                const operations = groupedMaterials[materialName];
+                
+                operations.sort((a, b) => a.operation.localeCompare(b.operation));
+                
+                operations.forEach(op => {
+                    const avgPrice = op.totalValue / op.totalWeight;
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${op.name}</td>
+                        <td>${op.operation.toUpperCase()}</td>
+                        <td>${op.totalWeight.toFixed(2)}</td>
+                        <td>R$ ${op.totalValue.toFixed(2)}</td>
+                        <td>R$ ${avgPrice.toFixed(2)}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
+                const compraOp = operations.find(op => op.operation === 'compra');
+                const vendaOp = operations.find(op => op.operation === 'venda');
+
+                const compraWeight = compraOp ? compraOp.totalWeight : 0;
+                const compraValue = compraOp ? compraOp.totalValue : 0;
+                const vendaWeight = vendaOp ? vendaOp.totalWeight : 0;
+                const vendaValue = vendaOp ? vendaOp.totalValue : 0;
+
+                const saldoWeight = vendaWeight - compraWeight;
+                const saldoValue = vendaValue - compraValue;
+
+                const totalRow = document.createElement('tr');
+                totalRow.style.backgroundColor = '#f0f0f0';
+                totalRow.innerHTML = `
+                    <td><strong>Saldo ${materialName}</strong></td>
+                    <td></td>
+                    <td><strong>${saldoWeight.toFixed(2)}</strong></td>
+                    <td><strong>R$ ${saldoValue.toFixed(2)}</strong></td>
+                    <td></td>
+                `;
+                tbody.appendChild(totalRow);
+
+                if (saldoValue > 0) {
+                    totalRow.style.color = '#27ae60';
+                } else if (saldoValue < 0) {
+                    totalRow.style.color = '#e74c3c';
+                }
+            });
+            
+            table.appendChild(tbody);
+            section.appendChild(table);
+            
+            const grandTotalWeight = Object.values(materialsSummary).reduce((sum, m) => sum + m.totalWeight, 0);
+            const grandTotalValue = Object.values(materialsSummary).reduce((sum, m) => sum + m.totalValue, 0);
+            
+            let totalCompraWeight = 0;
+            let totalCompraValue = 0;
+            let totalVendaWeight = 0;
+            let totalVendaValue = 0;
+
+            Object.values(materialsSummary).forEach(m => {
+                if (m.operation === 'compra') {
+                    totalCompraWeight += m.totalWeight;
+                    totalCompraValue += m.totalValue;
+                } else if (m.operation === 'venda') {
+                    totalVendaWeight += m.totalWeight;
+                    totalVendaValue += m.totalValue;
+                }
+            });
+
+            const saldoTotalWeight = totalVendaWeight - totalCompraWeight;
+            const saldoTotalValue = totalVendaValue - totalCompraValue;
+            const totalDespesas = expenses
+                .filter(e => e.date.startsWith(month))
+                .reduce((sum, e) => sum + e.value, 0);
+
+            const totalsDiv = document.createElement('div');
+            totalsDiv.className = 'grand-total';
+            totalsDiv.style.marginTop = '20px';
+            totalsDiv.style.padding = '15px';
+            totalsDiv.style.backgroundColor = '#f8f9fa';
+            totalsDiv.style.borderRadius = '5px';
+
+            totalsDiv.innerHTML = `
+                <h3>Resumo Geral do Mês</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div style="border-right: 1px solid #ddd; padding-right: 15px;">
+                        <h4>Compras</h4>
+                        <p>Peso Total: <strong>${totalCompraWeight.toFixed(2)} kg</strong></p>
+                        <p>Valor Total: <strong>R$ ${totalCompraValue.toFixed(2)}</strong></p>
+                    </div>
+                    <div>
+                        <h4>Vendas</h4>
+                        <p>Peso Total: <strong>${totalVendaWeight.toFixed(2)} kg</strong></p>
+                        <p>Valor Total: <strong>R$ ${totalVendaValue.toFixed(2)}</strong></p>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <h4>Despesas do Mês</h4>
+                    <p>Total: <strong style="color: #e74c3c">R$ ${totalDespesas.toFixed(2)}</strong></p>
+                </div>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <h4 style="color: ${saldoTotalValue - totalDespesas >= 0 ? '#27ae60' : '#e74c3c'}">
+                        Saldo Final (Vendas - Compras - Despesas)
+                    </h4>
+                    <p>Peso Líquido: <strong>${saldoTotalWeight.toFixed(2)} kg</strong></p>
+                    <p>Resultado Financeiro: <strong style="color: ${saldoTotalValue - totalDespesas >= 0 ? '#27ae60' : '#e74c3c'}">
+                        R$ ${(saldoTotalValue - totalDespesas).toFixed(2)}
+                    </strong></p>
+                </div>
+            `;
+            
+            section.appendChild(totalsDiv);
+            reportContent.appendChild(section);
+
+            addDetailedCommandsReport(reportContent, monthlyCommands);
+        }
+
+        // Adiciona relatório detalhado por comanda
+        function addDetailedCommandsReport(container, monthlyCommands) {
+            const section = document.createElement('div');
+            section.className = 'report-section';
+            section.style.marginTop = '30px';
+            
+            const header = document.createElement('div');
+            header.className = 'report-header';
+            header.innerHTML = `<h2 style="color: white;">DETALHES POR COMANDAS</h2>`;
+            section.appendChild(header);
+            
+            const operations = {
+                compra: { commands: [], total: 0 },
+                venda: { commands: [], total: 0 }
+            };
+            
+            monthlyCommands.forEach(command => {
+                const commandTotal = command.items.reduce((sum, item) => sum + parseFloat(item.total), 0);
+                operations[command.operation].commands.push(command);
+                operations[command.operation].total += commandTotal;
+            });
+            
+            for (const [operationType, data] of Object.entries(operations)) {
+                if (data.commands.length > 0) {
+                    const opSection = document.createElement('div');
+                    opSection.style.marginTop = '15px';
+                    
+                    const opHeader = document.createElement('h3');
+                    opHeader.innerHTML = `${operationType.toUpperCase()}S - Total: R$ ${data.total.toFixed(2)}`;
+                    opSection.appendChild(opHeader);
+                    
+                    data.commands.forEach(command => {
+                        const commandTotal = command.items.reduce((sum, item) => sum + parseFloat(item.total), 0);
+                        
+                        const card = document.createElement('div');
+                        card.className = `command-card ${operationType}`;
+                        
+                        let itemsHtml = '';
+                        command.items.forEach(item => {
+                            itemsHtml += `
+                                <div>${item.name} - ${item.weight}kg x R$ ${item.value} = R$ ${item.total}</div>
+                            `;
+                        });
+                        
+                        card.innerHTML = `
+                            <div class="command-info">
+                                ${command.date} ${command.time} - Comanda #${command.number} - ${command.clientName} - Total: R$ ${commandTotal.toFixed(2)}
+                            </div>
+                            <div class="command-items">
+                                ${itemsHtml}
+                            </div>
+                        `;
+                        
+                        opSection.appendChild(card);
+                    });
+                    
+                    section.appendChild(opSection);
+                }
+            }
+            
+            container.appendChild(section);
+        }
+        
+        // Atualiza a tabela de preços
+        function updatePricesTable() {
+            const tableBody = document.getElementById('pricesTableBody');
+            tableBody.innerHTML = '';
+            
+            materials.forEach(material => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${material.name}</td>
+                    <td>
+                        <span id="buyPrice-${material.id}">${material.buyPrice.toFixed(2)}</span>
+                        <button onclick="editPrice(${material.id}, 'buyPrice')" class="edit-btn">Editar</button>
+                    </td>
+                    <td>
+                        <span id="sellPrice-${material.id}">${material.sellPrice.toFixed(2)}</span>
+                        <button onclick="editPrice(${material.id}, 'sellPrice')" class="edit-btn">Editar</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Função para editar preços
+        function editPrice(materialId, priceType) {
+            const material = materials.find(m => m.id === materialId);
+            if (!material) return;
+            
+            const currentPrice = material[priceType];
+            const priceName = priceType === 'buyPrice' ? 'COMPRA' : 'VENDA';
+            const newPrice = prompt(`Editar preço de ${priceName} para ${material.name}\n\n(Esta alteração será permanente)`, currentPrice.toFixed(2));
+            
+            if (newPrice && !isNaN(parseFloat(newPrice))) {
+                material[priceType] = parseFloat(newPrice);
+                localStorage.setItem('reciclagemMaterials', JSON.stringify(materials));
+                
+                document.getElementById(`${priceType}-${materialId}`).textContent = parseFloat(newPrice).toFixed(2);
+                
+                if (document.getElementById('screen7').style.display === 'block') {
+                    updateMaterialsTable();
+                }
+            }
+        }
+        
+        // Atualiza a tabela de materiais
+        function updateMaterialsTable() {
+            const tableBody = document.getElementById('materialsTable');
+            tableBody.innerHTML = '';
+            
+            materials.forEach((material, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${material.name}</td>
+                    <td style="text-align:center;font-size:20px;">${material.icon}</td>
+                    <td>R$ ${material.buyPrice.toFixed(2)}</td>
+                    <td>R$ ${material.sellPrice.toFixed(2)}</td>
+                    <td><button class="remove-btn" onclick="removeMaterial(${index})">X</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Adiciona novo material
+        function addNewMaterial() {
+            const name = document.getElementById('newMaterialName').value.trim();
+            const icon = document.getElementById('newMaterialIcon').value.trim();
+            const buyPrice = parseFloat(document.getElementById('newMaterialBuyPrice').value);
+            const sellPrice = parseFloat(document.getElementById('newMaterialSellPrice').value);
+            
+            if (!name || !icon || isNaN(buyPrice)) {
+                alert("Preencha todos os campos corretamente!");
+                return;
+            }
+            
+            const newMaterial = {
+                id: nextMaterialId++,
+                name: name,
+                icon: icon,
+                buyPrice: buyPrice,
+                sellPrice: isNaN(sellPrice) ? buyPrice * 1.2 : sellPrice
+            };
+            
+            materials.push(newMaterial);
+            localStorage.setItem('reciclagemMaterials', JSON.stringify(materials));
+            
+            document.getElementById('newMaterialName').value = '';
+            document.getElementById('newMaterialIcon').value = '';
+            document.getElementById('newMaterialBuyPrice').value = '';
+            document.getElementById('newMaterialSellPrice').value = '';
+            
+            updateMaterialsTable();
+            updatePricesTable();
+        }
+        
+        // Remove material
+        function removeMaterial(index) {
+            if (confirm(`Tem certeza que deseja remover o material ${materials[index].name}?`)) {
+                materials.splice(index, 1);
+                localStorage.setItem('reciclagemMaterials', JSON.stringify(materials));
+                updateMaterialsTable();
+                updatePricesTable();
+            }
+        }
+        
+        // Cancela a comanda atual
+        function cancelCommand() {
+            if (confirm('Tem certeza que deseja cancelar esta comanda?')) {
+                currentCommand = null;
+                currentOperation = null;
+                currentClient = null;
+                currentMaterial = null;
+                editingPrice = false;
+            }
+        }
+        
+        // Event Listeners
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const weight = parseFloat(document.getElementById('materialWeight').value);
+            
+            if (!weight || weight <= 0) {
+                alert("Por favor, insira um peso válido!");
+                return;
+            }
+            
+            const value = parseFloat(document.getElementById('materialValue').value);
+            const total = (weight * value).toFixed(2);
+            
+            const defaultPrice = currentOperation === 'compra' ? currentMaterial.buyPrice : currentMaterial.sellPrice;
+            const priceEdited = value !== defaultPrice;
+            
+            currentCommand.items.push({
+                id: currentMaterial.id,
+                name: currentMaterial.name,
+                weight: weight,
+                value: value.toFixed(2),
+                total: total,
+                priceEdited: priceEdited
+            });
+            
+            if (priceEdited) {
+                alert(`Preço de ${currentMaterial.name} alterado para R$ ${value.toFixed(2)} apenas nesta operação`);
+            }
+            
+            updateMaterialsList();
+            document.getElementById('materialWeight').value = '';
+            document.getElementById('materialValue').style.backgroundColor = '';
+        });
+        
+        document.getElementById('materialValue').addEventListener('click', function() {
+            this.style.backgroundColor = '#ffffcc';
+        });
+        
+        document.getElementById('finalizeBtn').addEventListener('click', finalizeCommand);
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            showScreen(0);
+        });
+
+        // Função para mostrar o prompt de senha
+        function showPasswordPrompt() {
+            const senha = prompt("Digite a senha para resetar todos os dados:");
+                
+            if (senha === "9262") {
+                resetAllData();
+            } else if (senha !== null) {
+                alert("Senha incorreta! Operação cancelada.");
+            }
+        }
+
+        // Função para resetar todos os dados
+        function resetAllData() {
+            if (confirm('⚠️ ATENÇÃO! ISSO APAGARÁ TODOS OS DADOS PERMANENTEMENTE!\n\n• Materiais cadastrados\n• Histórico de comandas\n• Dados de clientes\n\nTem certeza que deseja continuar?')) {
+                localStorage.clear();
+                
+                materials = [
+                    { id: 1, name: 'Lata', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
+                    { id: 2, name: 'Ferro', icon: '-', buyPrice: 0.40, sellPrice: 0.70 },
+                    { id: 3, name: 'Perfil', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
+                    { id: 4, name: 'Chapa', icon: '-', buyPrice: 4.0, sellPrice: 8.0 },
+                    { id: 5, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
+                    { id: 6, name: 'Bloco', icon: '-', buyPrice: 2.0, sellPrice: 7.5 },
+                    { id: 7, name: 'Fio Insta', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
+                    { id: 8, name: 'Fio Cabo', icon: '-', buyPrice: 15.0, sellPrice: 37.0 },
+                    { id: 9, name: 'Fio Misto', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
+                    { id: 10, name: 'Garimpo', icon: '-', buyPrice: 1.0, sellPrice: 3.0 },
+                    { id: 11, name: 'Bateria', icon: '-', buyPrice: 2.50, sellPrice: 3.20 },
+                    { id: 12, name: 'Aro', icon: '-', buyPrice: 2.0, sellPrice: 7.0 },
+                    { id: 13, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
+                    { id: 14, name: 'Roda', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
+                    { id: 15, name: 'Chumbo', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
+                    { id: 16, name: 'C1', icon: '-', buyPrice: 35.0, sellPrice: 46.0 },
+                    { id: 17, name: 'C2', icon: '-', buyPrice: 32.0, sellPrice: 42.0 },
+                    { id: 18, name: 'Metal', icon: '-', buyPrice: 12.0, sellPrice: 25.0 },
+                    { id: 19, name: 'Fio PP', icon: '-', buyPrice: 5.0, sellPrice: 12.0 },
+                    { id: 20, name: 'Inox', icon: '-', buyPrice: 2.50, sellPrice: 5.0 },
+                    { id: 21, name: 'Motor', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
+                    { id: 22, name: 'Outros 520', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
+                    { id: 23, name: 'Oleo', icon: '-', buyPrice: 1.0, sellPrice: 2.5 }
+                ];
+                
+                clientsData = {
+                    1: { clientName: "Cliente 1" },
+                    2: { clientName: "Cliente 2" },
+                    3: { clientName: "Cliente 3" },
+                    4: { clientName: "Cliente 4" }
+                };
+                
+                commands = [];
+                nextCommandNumber = 1;
+                nextMaterialId = 24;
+                expenses = [];
+                nextExpenseId = 1;
+                unfinishedCommands = {};
+                
+                localStorage.setItem('reciclagemMaterials', JSON.stringify(materials));
+                localStorage.setItem('reciclagemData', JSON.stringify(clientsData));
+                localStorage.setItem('reciclagemCommands', JSON.stringify(commands));
+                localStorage.setItem('nextCommandNumber', nextCommandNumber);
+                localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+                
+                alert('✅ Todos os dados foram resetados com sucesso!\nO sistema será reiniciado.');
+                location.reload();
+            }
+        }
+
+        function clearUnfinishedCommands() {
+            unfinishedCommands = {};
+            localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+        }
+    </script>
+</body>
+</html>
