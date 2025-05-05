@@ -214,6 +214,43 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Configurações do GitHub */
+        .github-config {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .github-config h3 {
+            text-align: left;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .sync-status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .sync-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .sync-error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .sync-loading {
+            background-color: #fff3cd;
+            color: #856404;
+        }
     </style>
 </head>
 <body>
@@ -228,6 +265,7 @@
             <button class="btn-dark" onclick="showScreen(6)">PREÇOS MATERIAIS</button>
             <button class="btn-dark" onclick="showScreen(7)">CADASTRO MATERIAIS</button>
             <button class="btn-dark" onclick="showScreen(8)">DESPESAS</button>
+            <button class="btn-dark" onclick="showScreen(9)">CONFIGURAÇÕES</button>
         </div>
     </div>
 
@@ -426,6 +464,44 @@
         <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
     </div>
 
+    <!-- Tela 9 - Configurações do GitHub -->
+    <div id="screen9" class="container">
+        <h1>Configurações do GitHub</h1>
+        
+        <div class="github-config">
+            <h3>Configuração do Repositório</h3>
+            <div class="form-group">
+                <label>Token de Acesso do GitHub:</label>
+                <input type="password" id="githubToken" placeholder="Insira seu token de acesso pessoal">
+                <small>Necessário para salvar dados no GitHub</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Nome do Repositório:</label>
+                <input type="text" id="githubRepo" placeholder="Ex: seu-usuario/nome-do-repositorio">
+            </div>
+            
+            <div class="form-group">
+                <label>Arquivo para Salvar os Dados:</label>
+                <input type="text" id="githubDataFile" placeholder="Ex: data.json" value="data.json">
+            </div>
+            
+            <button onclick="saveGithubConfig()" class="btn-primary">Salvar Configurações</button>
+            <button onclick="testGithubConnection()" class="btn-secondary">Testar Conexão</button>
+            
+            <div id="syncStatus" class="sync-status" style="display: none;"></div>
+        </div>
+        
+        <div class="github-config" style="margin-top: 20px;">
+            <h3>Sincronização de Dados</h3>
+            <p>Última sincronização: <span id="lastSyncTime">Nunca</span></p>
+            <button onclick="syncToGithub()" class="btn-primary">Sincronizar Agora</button>
+            <button onclick="loadFromGithub()" class="btn-secondary">Carregar do GitHub</button>
+        </div>
+        
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    </div>
+
     <script>
         // Dados iniciais
         let materials = JSON.parse(localStorage.getItem('reciclagemMaterials')) || [
@@ -467,6 +543,14 @@
         let expenses = JSON.parse(localStorage.getItem('reciclagemExpenses')) || [];
         let nextExpenseId = expenses.length > 0 ? Math.max(...expenses.map(e => e.id)) + 1 : 1;
         let unfinishedCommands = JSON.parse(localStorage.getItem('reciclagemUnfinishedCommands')) || {};
+
+        // Configurações do GitHub
+        let githubConfig = JSON.parse(localStorage.getItem('reciclagemGithubConfig')) || {
+            token: '',
+            repo: '',
+            dataFile: 'data.json',
+            lastSync: null
+        };
 
         // Variáveis da comanda atual
         let currentCommand = null;
@@ -525,6 +609,18 @@
             } else if (screenNumber === 8) {
                 document.getElementById('expenseDate').value = new Date().toISOString().split('T')[0];
                 updateExpensesTable();
+            } else if (screenNumber === 9) {
+                // Configurações do GitHub
+                document.getElementById('githubToken').value = githubConfig.token;
+                document.getElementById('githubRepo').value = githubConfig.repo;
+                document.getElementById('githubDataFile').value = githubConfig.dataFile;
+                
+                if (githubConfig.lastSync) {
+                    const lastSyncDate = new Date(githubConfig.lastSync);
+                    document.getElementById('lastSyncTime').textContent = lastSyncDate.toLocaleString();
+                } else {
+                    document.getElementById('lastSyncTime').textContent = 'Nunca';
+                }
             }
         }
 
@@ -742,6 +838,9 @@
             currentMaterial = null;
             
             showScreen(0);
+            
+            // Sincroniza com o GitHub após finalizar comanda
+            syncToGithub();
         }
 
         // Gera relatório diário
@@ -1289,6 +1388,213 @@
         function clearUnfinishedCommands() {
             unfinishedCommands = {};
             localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+        }
+
+        // =============================================
+        // Funções para integração com GitHub
+        // =============================================
+
+        // Salva as configurações do GitHub
+        function saveGithubConfig() {
+            const token = document.getElementById('githubToken').value.trim();
+            const repo = document.getElementById('githubRepo').value.trim();
+            const dataFile = document.getElementById('githubDataFile').value.trim();
+            
+            if (!token || !repo || !dataFile) {
+                alert("Preencha todos os campos de configuração do GitHub!");
+                return;
+            }
+            
+            githubConfig = {
+                token: token,
+                repo: repo,
+                dataFile: dataFile,
+                lastSync: githubConfig.lastSync
+            };
+            
+            localStorage.setItem('reciclagemGithubConfig', JSON.stringify(githubConfig));
+            showSyncStatus('Configurações salvas com sucesso!', 'success');
+        }
+
+        // Testa a conexão com o GitHub
+        async function testGithubConnection() {
+            if (!githubConfig.token || !githubConfig.repo) {
+                alert("Configure primeiro o token e o repositório!");
+                return;
+            }
+            
+            showSyncStatus('Testando conexão com GitHub...', 'loading');
+            
+            try {
+                const response = await fetch(`https://api.github.com/repos/${githubConfig.repo}`, {
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    showSyncStatus('Conexão com GitHub estabelecida com sucesso!', 'success');
+                } else {
+                    const error = await response.json();
+                    showSyncStatus(`Erro: ${error.message}`, 'error');
+                }
+            } catch (err) {
+                showSyncStatus(`Erro na conexão: ${err.message}`, 'error');
+            }
+        }
+
+        // Sincroniza dados com o GitHub
+        async function syncToGithub() {
+            if (!githubConfig.token || !githubConfig.repo || !githubConfig.dataFile) {
+                alert("Configure primeiro as credenciais do GitHub!");
+                return;
+            }
+            
+            showSyncStatus('Sincronizando dados com GitHub...', 'loading');
+            
+            try {
+                // Primeiro verifica se o arquivo já existe
+                const checkUrl = `https://api.github.com/repos/${githubConfig.repo}/contents/${githubConfig.dataFile}`;
+                let sha = null;
+                
+                const checkResponse = await fetch(checkUrl, {
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`
+                    }
+                });
+                
+                if (checkResponse.ok) {
+                    const fileData = await checkResponse.json();
+                    sha = fileData.sha;
+                }
+                
+                // Prepara os dados para enviar
+                const allData = {
+                    materials: materials,
+                    clientsData: clientsData,
+                    commands: commands,
+                    nextCommandNumber: nextCommandNumber,
+                    expenses: expenses,
+                    nextExpenseId: nextExpenseId,
+                    unfinishedCommands: unfinishedCommands,
+                    nextMaterialId: nextMaterialId,
+                    lastSync: new Date().toISOString()
+                };
+                
+                const content = JSON.stringify(allData, null, 2);
+                const encodedContent = btoa(unescape(encodeURIComponent(content)));
+                
+                // Faz o upload ou atualização do arquivo
+                const uploadUrl = `https://api.github.com/repos/${githubConfig.repo}/contents/${githubConfig.dataFile}`;
+                const uploadResponse = await fetch(uploadUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Atualização automática dos dados do sistema de reciclagem',
+                        content: encodedContent,
+                        sha: sha
+                    })
+                });
+                
+                if (uploadResponse.ok) {
+                    githubConfig.lastSync = new Date().toISOString();
+                    localStorage.setItem('reciclagemGithubConfig', JSON.stringify(githubConfig));
+                    document.getElementById('lastSyncTime').textContent = new Date().toLocaleString();
+                    showSyncStatus('Dados sincronizados com sucesso!', 'success');
+                } else {
+                    const error = await uploadResponse.json();
+                    showSyncStatus(`Erro ao sincronizar: ${error.message}`, 'error');
+                }
+            } catch (err) {
+                showSyncStatus(`Erro na sincronização: ${err.message}`, 'error');
+            }
+        }
+
+        // Carrega dados do GitHub
+        async function loadFromGithub() {
+            if (!githubConfig.token || !githubConfig.repo || !githubConfig.dataFile) {
+                alert("Configure primeiro as credenciais do GitHub!");
+                return;
+            }
+            
+            if (!confirm('Isso substituirá todos os dados locais pelos do GitHub. Continuar?')) {
+                return;
+            }
+            
+            showSyncStatus('Carregando dados do GitHub...', 'loading');
+            
+            try {
+                const url = `https://api.github.com/repos/${githubConfig.repo}/contents/${githubConfig.dataFile}`;
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const fileData = await response.json();
+                    const decodedContent = decodeURIComponent(escape(atob(fileData.content)));
+                    const remoteData = JSON.parse(decodedContent);
+                    
+                    // Atualiza os dados locais
+                    materials = remoteData.materials || materials;
+                    clientsData = remoteData.clientsData || clientsData;
+                    commands = remoteData.commands || commands;
+                    nextCommandNumber = remoteData.nextCommandNumber || nextCommandNumber;
+                    expenses = remoteData.expenses || expenses;
+                    nextExpenseId = remoteData.nextExpenseId || nextExpenseId;
+                    unfinishedCommands = remoteData.unfinishedCommands || unfinishedCommands;
+                    nextMaterialId = remoteData.nextMaterialId || nextMaterialId;
+                    
+                    // Salva localmente
+                    localStorage.setItem('reciclagemMaterials', JSON.stringify(materials));
+                    localStorage.setItem('reciclagemData', JSON.stringify(clientsData));
+                    localStorage.setItem('reciclagemCommands', JSON.stringify(commands));
+                    localStorage.setItem('nextCommandNumber', nextCommandNumber);
+                    localStorage.setItem('reciclagemExpenses', JSON.stringify(expenses));
+                    localStorage.setItem('reciclagemUnfinishedCommands', JSON.stringify(unfinishedCommands));
+                    
+                    githubConfig.lastSync = new Date().toISOString();
+                    localStorage.setItem('reciclagemGithubConfig', JSON.stringify(githubConfig));
+                    document.getElementById('lastSyncTime').textContent = new Date().toLocaleString();
+                    
+                    showSyncStatus('Dados carregados com sucesso do GitHub!', 'success');
+                    alert('Dados carregados com sucesso! O sistema será reiniciado.');
+                    location.reload();
+                } else {
+                    const error = await response.json();
+                    showSyncStatus(`Erro ao carregar: ${error.message}`, 'error');
+                }
+            } catch (err) {
+                showSyncStatus(`Erro ao carregar dados: ${err.message}`, 'error');
+            }
+        }
+
+        // Mostra o status da sincronização
+        function showSyncStatus(message, type) {
+            const statusDiv = document.getElementById('syncStatus');
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            
+            // Remove todas as classes de status
+            statusDiv.classList.remove('sync-success', 'sync-error', 'sync-loading');
+            
+            // Adiciona a classe apropriada
+            if (type === 'success') {
+                statusDiv.classList.add('sync-success');
+            } else if (type === 'error') {
+                statusDiv.classList.add('sync-error');
+            } else if (type === 'loading') {
+                statusDiv.classList.add('sync-loading');
+            }
+            
+            // Esconde após 5 segundos
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
         }
     </script>
 </body>
