@@ -336,12 +336,53 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 17,
+      "operation": "compra",
+      "clientId": 2,
+      "clientName": "Cliente 2",
+      "date": "2025-05-06",
+      "time": "11:56",
+      "timestamp": 1746543394927,
+      "items": [
+        {
+          "id": 2,
+          "name": "Ferro",
+          "weight": 10,
+          "value": "0.40",
+          "total": "4.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 16,
+  "nextCommandNumber": 18,
   "expenses": [],
   "nextExpenseId": 1,
-  "unfinishedCommands": {},
+  "unfinishedCommands": {
+    "1": {
+      "number": 16,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-06",
+      "time": "11:52",
+      "timestamp": 1746543143012,
+      "items": [
+        {
+          "id": 3,
+          "name": "Perfil",
+          "weight": 56,
+          "value": "7.00",
+          "total": "392.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": false
+    }
+  },
   "nextMaterialId": 24,
-  "lastSync": "2025-05-06T14:50:26.113Z"
+  "lastSync": "2025-05-06T14:56:45.043Z"
 }
