@@ -160,6 +160,13 @@
       "icon": "-",
       "buyPrice": 1,
       "sellPrice": 2.5
+    },
+    {
+      "id": 24,
+      "name": "Radiador Cobre",
+      "icon": "👀",
+      "buyPrice": 7,
+      "sellPrice": 21
     }
   ],
   "clientsData": {
@@ -176,11 +183,152 @@
       "clientName": "Cliente 4"
     }
   },
-  "commands": [],
-  "nextCommandNumber": 1,
+  "commands": [
+    {
+      "number": 1,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-05",
+      "time": "15:13",
+      "timestamp": 1746468783012,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 10,
+          "value": "6.00",
+          "total": "60.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 2,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-05",
+      "time": "15:21",
+      "timestamp": 1746469266219,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 10,
+          "value": "6.00",
+          "total": "60.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 3,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-05",
+      "time": "15:21",
+      "timestamp": 1746469312813,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 2,
+          "value": "6.00",
+          "total": "12.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 4,
+      "operation": "compra",
+      "clientId": 2,
+      "clientName": "Cliente 2",
+      "date": "2025-05-05",
+      "time": "15:22",
+      "timestamp": 1746469323055,
+      "items": [
+        {
+          "id": 2,
+          "name": "Ferro",
+          "weight": 10,
+          "value": "0.40",
+          "total": "4.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 5,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-05",
+      "time": "15:23",
+      "timestamp": 1746469423982,
+      "items": [
+        {
+          "id": 22,
+          "name": "Outros 520",
+          "weight": 1,
+          "value": "900.00",
+          "total": "900.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 6,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-05",
+      "time": "17:09",
+      "timestamp": 1746475753480,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 100,
+          "value": "6.00",
+          "total": "600.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 9,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-06",
+      "time": "09:44",
+      "timestamp": 1746535464759,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 10,
+          "value": "6.00",
+          "total": "60.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    }
+  ],
+  "nextCommandNumber": 10,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
-  "nextMaterialId": 24,
-  "lastSync": "2025-05-05T23:45:44.273Z"
+  "nextMaterialId": 25,
+  "lastSync": "2025-05-06T13:09:24.233Z"
 }
