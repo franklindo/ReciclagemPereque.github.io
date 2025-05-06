@@ -160,6 +160,27 @@
       "icon": "-",
       "buyPrice": 1,
       "sellPrice": 2.5
+    },
+    {
+      "id": 24,
+      "name": "Radiador Cobre",
+      "icon": "👀",
+      "buyPrice": 7,
+      "sellPrice": 21
+    },
+    {
+      "id": 25,
+      "name": "Porta",
+      "icon": "💩",
+      "buyPrice": 100,
+      "sellPrice": 200
+    },
+    {
+      "id": 26,
+      "name": "Janela",
+      "icon": "💯",
+      "buyPrice": 2,
+      "sellPrice": 3
     }
   ],
   "clientsData": {
@@ -178,20 +199,60 @@
   },
   "commands": [
     {
+      "number": 1,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-06",
+      "time": "11:34",
+      "timestamp": 1746542080984,
+      "items": [
+        {
+          "id": 24,
+          "name": "Radiador Cobre",
+          "weight": 10,
+          "value": "7.00",
+          "total": "70.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 2,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-06",
+      "time": "11:35",
+      "timestamp": 1746542117556,
+      "items": [
+        {
+          "id": 24,
+          "name": "Radiador Cobre",
+          "weight": 50,
+          "value": "7.00",
+          "total": "350.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
       "number": 3,
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente 1",
       "date": "2025-05-06",
-      "time": "08:46",
-      "timestamp": 1746532012774,
+      "time": "11:37",
+      "timestamp": 1746542270741,
       "items": [
         {
           "id": 1,
           "name": "Lata",
-          "weight": 10,
+          "weight": 45,
           "value": "6.00",
-          "total": "60.00",
+          "total": "270.00",
           "priceEdited": false
         }
       ],
@@ -203,36 +264,16 @@
       "clientId": 1,
       "clientName": "Cliente 1",
       "date": "2025-05-06",
-      "time": "10:15",
-      "timestamp": 1746537344618,
+      "time": "11:52",
+      "timestamp": 1746543174291,
       "items": [
         {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 20,
-          "value": "0.40",
-          "total": "8.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 5,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-06",
-      "time": "10:23",
-      "timestamp": 1746537815704,
-      "items": [
-        {
-          "id": 3,
-          "name": "Perfil",
-          "weight": 20,
+          "id": 1,
+          "name": "Lata",
+          "weight": 10,
           "value": "7.00",
-          "total": "140.00",
-          "priceEdited": false
+          "total": "70.00",
+          "priceEdited": true
         }
       ],
       "finalized": true
@@ -243,153 +284,45 @@
       "clientId": 1,
       "clientName": "Cliente 1",
       "date": "2025-05-06",
-      "time": "10:25",
-      "timestamp": 1746537934525,
-      "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 22,
-          "value": "0.40",
-          "total": "8.80",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 12,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-06",
-      "time": "11:25",
-      "timestamp": 1746541548421,
+      "time": "13:37",
+      "timestamp": 1746549454451,
       "items": [
         {
           "id": 1,
           "name": "Lata",
-          "weight": 20,
+          "weight": 23,
           "value": "6.00",
-          "total": "120.00",
+          "total": "138.00",
           "priceEdited": false
         }
       ],
       "finalized": true
     },
     {
-      "number": 14,
-      "operation": "venda",
-      "clientId": 2,
-      "clientName": "Cliente 2",
-      "date": "2025-05-06",
-      "time": "11:26",
-      "timestamp": 1746541590220,
-      "items": [
-        {
-          "id": 3,
-          "name": "Perfil",
-          "weight": 15,
-          "value": "10.00",
-          "total": "150.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 13,
+      "number": 7,
       "operation": "venda",
       "clientId": 1,
       "clientName": "Cliente 1",
       "date": "2025-05-06",
-      "time": "11:26",
-      "timestamp": 1746541573950,
+      "time": "18:54",
+      "timestamp": 1746568484417,
       "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 45,
-          "value": "0.70",
-          "total": "31.50",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 15,
-      "operation": "venda",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-06",
-      "time": "11:50",
-      "timestamp": 1746543006997,
-      "items": [
-        {
-          "id": 15,
-          "name": "Chumbo",
-          "weight": 10,
-          "value": "3.50",
-          "total": "35.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 17,
-      "operation": "compra",
-      "clientId": 2,
-      "clientName": "Cliente 2",
-      "date": "2025-05-06",
-      "time": "11:56",
-      "timestamp": 1746543394927,
-      "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 10,
-          "value": "0.40",
-          "total": "4.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 16,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-06",
-      "time": "11:52",
-      "timestamp": 1746543143012,
-      "items": [
-        {
-          "id": 3,
-          "name": "Perfil",
-          "weight": 56,
-          "value": "7.00",
-          "total": "392.00",
-          "priceEdited": false
-        },
         {
           "id": 1,
           "name": "Lata",
-          "weight": 10,
-          "value": "6.00",
-          "total": "60.00",
+          "weight": 2,
+          "value": "9.00",
+          "total": "18.00",
           "priceEdited": false
         }
       ],
       "finalized": true
     }
   ],
-  "nextCommandNumber": 18,
+  "nextCommandNumber": 9,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
-  "nextMaterialId": 24,
-  "lastSync": "2025-05-06T14:56:58.815Z"
+  "nextMaterialId": 27,
+  "lastSync": "2025-05-06T23:07:04.480Z"
 }
