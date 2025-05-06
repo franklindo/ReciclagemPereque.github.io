@@ -356,13 +356,8 @@
         }
       ],
       "finalized": true
-    }
-  ],
-  "nextCommandNumber": 18,
-  "expenses": [],
-  "nextExpenseId": 1,
-  "unfinishedCommands": {
-    "1": {
+    },
+    {
       "number": 16,
       "operation": "compra",
       "clientId": 1,
@@ -378,11 +373,23 @@
           "value": "7.00",
           "total": "392.00",
           "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 10,
+          "value": "6.00",
+          "total": "60.00",
+          "priceEdited": false
         }
       ],
-      "finalized": false
+      "finalized": true
     }
-  },
+  ],
+  "nextCommandNumber": 18,
+  "expenses": [],
+  "nextExpenseId": 1,
+  "unfinishedCommands": {},
   "nextMaterialId": 24,
-  "lastSync": "2025-05-06T14:56:45.043Z"
+  "lastSync": "2025-05-06T14:56:58.815Z"
 }
