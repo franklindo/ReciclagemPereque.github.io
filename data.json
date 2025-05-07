@@ -169,9 +169,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 10,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-07",
+      "time": "07:23",
+      "timestamp": 1746613429090,
+      "items": [
+        {
+          "id": 28,
+          "name": "Bomba",
+          "weight": 10000,
+          "value": "1.00",
+          "total": "10000.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 10,
+  "nextCommandNumber": 11,
   "expenses": [
     {
       "id": 1,
@@ -183,5 +203,5 @@
   "nextExpenseId": 2,
   "unfinishedCommands": {},
   "nextMaterialId": 29,
-  "lastSync": "2025-05-07T00:30:34.182Z"
+  "lastSync": "2025-05-07T10:24:39.445Z"
 }
