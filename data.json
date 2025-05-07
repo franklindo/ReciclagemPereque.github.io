@@ -1,186 +1,18 @@
 {
   "materials": [
     {
-      "id": 1,
-      "name": "Lata",
-      "icon": "-",
-      "buyPrice": 6,
-      "sellPrice": 9
-    },
-    {
-      "id": 2,
-      "name": "Ferro",
-      "icon": "-",
-      "buyPrice": 0.4,
-      "sellPrice": 0.7
-    },
-    {
-      "id": 3,
-      "name": "Perfil",
-      "icon": "-",
-      "buyPrice": 7,
-      "sellPrice": 10
-    },
-    {
-      "id": 4,
-      "name": "Chapa",
-      "icon": "-",
-      "buyPrice": 4,
-      "sellPrice": 8
-    },
-    {
-      "id": 5,
-      "name": "Panela",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 8
-    },
-    {
-      "id": 6,
-      "name": "Bloco",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 7.5
-    },
-    {
-      "id": 7,
-      "name": "Fio Insta",
-      "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 20
-    },
-    {
-      "id": 8,
-      "name": "Fio Cabo",
-      "icon": "-",
-      "buyPrice": 15,
-      "sellPrice": 37
-    },
-    {
-      "id": 9,
-      "name": "Fio Misto",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 10
-    },
-    {
-      "id": 10,
-      "name": "Garimpo",
-      "icon": "-",
+      "id": 27,
+      "name": "Edmilson",
+      "icon": "1",
       "buyPrice": 1,
-      "sellPrice": 3
+      "sellPrice": 1
     },
     {
-      "id": 11,
-      "name": "Bateria",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 3.2
-    },
-    {
-      "id": 12,
-      "name": "Aro",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 7
-    },
-    {
-      "id": 13,
-      "name": "Panela",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 8
-    },
-    {
-      "id": 14,
-      "name": "Roda",
-      "icon": "-",
-      "buyPrice": 7,
-      "sellPrice": 12
-    },
-    {
-      "id": 15,
-      "name": "Chumbo",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 3.5
-    },
-    {
-      "id": 16,
-      "name": "C1",
-      "icon": "-",
-      "buyPrice": 35,
-      "sellPrice": 46
-    },
-    {
-      "id": 17,
-      "name": "C2",
-      "icon": "-",
-      "buyPrice": 32,
-      "sellPrice": 42
-    },
-    {
-      "id": 18,
-      "name": "Metal",
-      "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 25
-    },
-    {
-      "id": 19,
-      "name": "Fio PP",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 12
-    },
-    {
-      "id": 20,
-      "name": "Inox",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 5
-    },
-    {
-      "id": 21,
-      "name": "Motor",
-      "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 20
-    },
-    {
-      "id": 22,
-      "name": "Outros 520",
-      "icon": "-",
+      "id": 28,
+      "name": "Bomba",
+      "icon": "2",
       "buyPrice": 1,
-      "sellPrice": 2
-    },
-    {
-      "id": 23,
-      "name": "Oleo",
-      "icon": "-",
-      "buyPrice": 1,
-      "sellPrice": 2.5
-    },
-    {
-      "id": 24,
-      "name": "Radiador Cobre",
-      "icon": "👀",
-      "buyPrice": 7,
-      "sellPrice": 21
-    },
-    {
-      "id": 25,
-      "name": "Porta",
-      "icon": "💩",
-      "buyPrice": 100,
-      "sellPrice": 200
-    },
-    {
-      "id": 26,
-      "name": "Janela",
-      "icon": "💯",
-      "buyPrice": 2,
-      "sellPrice": 3
+      "sellPrice": 1
     }
   ],
   "clientsData": {
@@ -317,12 +149,39 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 9,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-07",
+      "time": "21:29",
+      "timestamp": 1746577796469,
+      "items": [
+        {
+          "id": 27,
+          "name": "Edmilson",
+          "weight": 1,
+          "value": "13000.00",
+          "total": "13000.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 9,
-  "expenses": [],
-  "nextExpenseId": 1,
+  "nextCommandNumber": 10,
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Aluguel",
+      "value": 2500,
+      "date": "2025-05-07"
+    }
+  ],
+  "nextExpenseId": 2,
   "unfinishedCommands": {},
-  "nextMaterialId": 27,
-  "lastSync": "2025-05-06T23:07:04.480Z"
+  "nextMaterialId": 29,
+  "lastSync": "2025-05-07T00:30:34.182Z"
 }
