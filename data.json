@@ -532,12 +532,48 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 19,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-11",
+      "time": "15:33",
+      "timestamp": 1746988401396,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 2,
+          "value": "6.00",
+          "total": "12.00",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 56,
+          "value": "6.00",
+          "total": "336.00",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "Chapa",
+          "weight": 12,
+          "value": "4.00",
+          "total": "48.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 19,
+  "nextCommandNumber": 20,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 24,
-  "lastSync": "2025-05-11T18:32:59.690Z"
+  "lastSync": "2025-05-11T18:36:08.406Z"
 }
