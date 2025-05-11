@@ -236,9 +236,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 6,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-11",
+      "time": "10:56",
+      "timestamp": 1746971777574,
+      "items": [
+        {
+          "id": 1,
+          "name": "Lata",
+          "weight": 3,
+          "value": "6.00",
+          "total": "18.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 6,
+  "nextCommandNumber": 7,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {
@@ -255,5 +275,5 @@
     }
   },
   "nextMaterialId": 24,
-  "lastSync": "2025-05-11T13:55:49.784Z"
+  "lastSync": "2025-05-11T13:56:26.538Z"
 }
