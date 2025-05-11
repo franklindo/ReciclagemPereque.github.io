@@ -256,13 +256,8 @@
         }
       ],
       "finalized": true
-    }
-  ],
-  "nextCommandNumber": 7,
-  "expenses": [],
-  "nextExpenseId": 1,
-  "unfinishedCommands": {
-    "4": {
+    },
+    {
       "number": 1,
       "operation": "compra",
       "clientId": 4,
@@ -270,10 +265,23 @@
       "date": "2025-05-07",
       "time": "07:25",
       "timestamp": 1746613557626,
-      "items": [],
-      "finalized": false
+      "items": [
+        {
+          "id": 12,
+          "name": "Aro",
+          "weight": 3,
+          "value": "2.00",
+          "total": "6.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
-  },
+  ],
+  "nextCommandNumber": 7,
+  "expenses": [],
+  "nextExpenseId": 1,
+  "unfinishedCommands": {},
   "nextMaterialId": 24,
-  "lastSync": "2025-05-11T13:56:26.538Z"
+  "lastSync": "2025-05-11T13:56:56.458Z"
 }
