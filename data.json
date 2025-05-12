@@ -2,368 +2,204 @@
   "materials": [
     {
       "id": 1,
-      "name": "01-ACO1",
-      "icon": "-",
-      "buyPrice": 35,
-      "sellPrice": 48.5
-    },
-    {
-      "id": 2,
-      "name": "02-ACO2",
-      "icon": "-",
-      "buyPrice": 32,
-      "sellPrice": 45.5
-    },
-    {
-      "id": 3,
-      "name": "03-ARO",
-      "icon": "-",
-      "buyPrice": 3,
-      "sellPrice": 7
-    },
-    {
-      "id": 4,
-      "name": "04-BATERIA",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 3.5
-    },
-    {
-      "id": 5,
-      "name": "05-BLOCO",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 6
-    },
-    {
-      "id": 6,
-      "name": "06-CADEIRA A",
-      "icon": "-",
-      "buyPrice": 3,
-      "sellPrice": 7.5
-    },
-    {
-      "id": 7,
-      "name": "07-CABO",
-      "icon": "-",
-      "buyPrice": 15,
-      "sellPrice": 36.5
-    },
-    {
-      "id": 8,
-      "name": "08-CAIXA",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 12
-    },
-    {
-      "id": 9,
-      "name": "09-CHAPA",
-      "icon": "-",
-      "buyPrice": 3.5,
-      "sellPrice": 7.5
-    },
-    {
-      "id": 10,
-      "name": "10-CHUMBO",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 6
-    },
-    {
-      "id": 11,
-      "name": "11-FERRO",
-      "icon": "-",
-      "buyPrice": 0.4,
-      "sellPrice": 0.6
-    },
-    {
-      "id": 12,
-      "name": "12-FIO MISTO",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 11
-    },
-    {
-      "id": 13,
-      "name": "13-GARIMPO",
-      "icon": "-",
-      "buyPrice": 1,
-      "sellPrice": 2
-    },
-    {
-      "id": 14,
-      "name": "14-INOX",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 4.5
-    },
-    {
-      "id": 15,
-      "name": "15-INSTALAÇÃO",
-      "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 22
-    },
-    {
-      "id": 16,
       "name": "16-LATA",
       "icon": "-",
       "buyPrice": 6,
       "sellPrice": 9
     },
     {
-      "id": 17,
-      "name": "17-METAL",
+      "id": 2,
+      "name": "11-FERR",
       "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 28
+      "buyPrice": 0.4,
+      "sellPrice": 0.6
     },
     {
-      "id": 18,
-      "name": "18-MOTOR G",
+      "id": 3,
+      "name": "21-PERF",
       "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 28
+      "buyPrice": 7,
+      "sellPrice": 10
     },
     {
-      "id": 19,
-      "name": "19-PANELA LIMPA",
+      "id": 4,
+      "name": "09-CHAP",
+      "icon": "-",
+      "buyPrice": 3.5,
+      "sellPrice": 7.5
+    },
+    {
+      "id": 5,
+      "name": "05-BLOC",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 6
+    },
+    {
+      "id": 6,
+      "name": "06-CADE",
+      "icon": "-",
+      "buyPrice": 3,
+      "sellPrice": 7.5
+    },
+    {
+      "id": 7,
+      "name": "19-PANE",
       "icon": "-",
       "buyPrice": 4,
       "sellPrice": 7.5
     },
     {
-      "id": 20,
-      "name": "20-PANELA MISTA",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 5
-    },
-    {
-      "id": 21,
-      "name": "21-PERFIL LIMPO",
+      "id": 8,
+      "name": "25-RODA",
       "icon": "-",
       "buyPrice": 7,
-      "sellPrice": 10
+      "sellPrice": 12
     },
     {
-      "id": 22,
-      "name": "22-PERFIL MISTO",
+      "id": 9,
+      "name": "01-ACO1",
       "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 8
+      "buyPrice": 35,
+      "sellPrice": 48.5
     },
     {
-      "id": 23,
-      "name": "23-RADIADOR A",
+      "id": 10,
+      "name": "02-ACO2",
       "icon": "-",
-      "buyPrice": 1,
-      "sellPrice": 7
+      "buyPrice": 32,
+      "sellPrice": 45.5
     },
     {
-      "id": 24,
-      "name": "24-RADIADOR C",
+      "id": 11,
+      "name": "17-META",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 28
+    },
+    {
+      "id": 12,
+      "name": "15-INST",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 22
+    },
+    {
+      "id": 13,
+      "name": "07-CABO",
+      "icon": "-",
+      "buyPrice": 15,
+      "sellPrice": 36.5
+    },
+    {
+      "id": 14,
+      "name": "12-FIOM",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 11
+    },
+    {
+      "id": 15,
+      "name": "29-C_PP",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 12
+    },
+    {
+      "id": 16,
+      "name": "24-RADI",
       "icon": "-",
       "buyPrice": 7,
       "sellPrice": 20
     },
     {
-      "id": 25,
-      "name": "25-RODA A",
+      "id": 17,
+      "name": "13-GARI",
       "icon": "-",
-      "buyPrice": 7,
-      "sellPrice": 12
+      "buyPrice": 1,
+      "sellPrice": 2
     },
     {
-      "id": 26,
-      "name": "26-TV LED",
+      "id": 18,
+      "name": "14-INOX",
+      "icon": "-",
+      "buyPrice": 2.5,
+      "sellPrice": 4.5
+    },
+    {
+      "id": 19,
+      "name": "18-MOTG",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 28
+    },
+    {
+      "id": 20,
+      "name": "04-BATE",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 3.5
+    },
+    {
+      "id": 21,
+      "name": "26-TV L",
       "icon": "-",
       "buyPrice": 2,
       "sellPrice": 5
     },
     {
-      "id": 27,
-      "name": "27-TV TUBO",
+      "id": 22,
+      "name": "27-TV T",
       "icon": "-",
       "buyPrice": 5,
       "sellPrice": 10
     },
     {
-      "id": 28,
-      "name": "28-ZAMARK",
+      "id": 23,
+      "name": "28-ZARK",
       "icon": "-",
       "buyPrice": 2,
       "sellPrice": 10
     },
     {
-      "id": 29,
-      "name": "29-CABO_PP",
+      "id": 24,
+      "name": "10-CHBO",
       "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 12
+      "buyPrice": 2.5,
+      "sellPrice": 6
     }
   ],
   "clientsData": {
     "1": {
-      "clientName": "Cliente 1"
-    },
-    "2": {
-      "clientName": "Cliente 2"
-    },
-    "3": {
-      "clientName": "Cliente 3"
-    },
-    "4": {
-      "clientName": "Cliente 4"
+      "clientName": "Cliente Único"
     }
   },
   "commands": [
     {
-      "number": 7,
+      "number": 2,
       "operation": "compra",
       "clientId": 1,
-      "clientName": "Cliente 1",
+      "clientName": "Cliente Único",
       "date": "2025-05-12",
-      "time": "08:24",
-      "timestamp": 1747049078673,
+      "time": "10:11",
+      "timestamp": 1747055484879,
       "items": [
         {
-          "id": 16,
+          "id": 1,
           "name": "16-LATA",
-          "weight": 0.1,
+          "weight": 0.05,
           "value": "6.00",
-          "total": "0.60",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 8,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-12",
-      "time": "08:25",
-      "timestamp": 1747049130972,
-      "items": [
-        {
-          "id": 16,
-          "name": "16-LATA",
-          "weight": 8.7,
-          "value": "6.00",
-          "total": "52.20",
-          "priceEdited": false
-        },
-        {
-          "id": 11,
-          "name": "11-FERRO",
-          "weight": 0.5,
-          "value": "0.40",
-          "total": "0.20",
-          "priceEdited": false
-        },
-        {
-          "id": 9,
-          "name": "09-CHAPA",
-          "weight": 0.6,
-          "value": "3.50",
-          "total": "2.10",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 9,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-12",
-      "time": "08:36",
-      "timestamp": 1747049783256,
-      "items": [
-        {
-          "id": 16,
-          "name": "16-LATA",
-          "weight": 2.4,
-          "value": "6.00",
-          "total": "14.40",
-          "priceEdited": false
-        },
-        {
-          "id": 17,
-          "name": "17-METAL",
-          "weight": 0.6,
-          "value": "12.00",
-          "total": "7.20",
-          "priceEdited": false
-        },
-        {
-          "id": 15,
-          "name": "15-INSTALAÇÃO",
-          "weight": 1.5,
-          "value": "12.00",
-          "total": "18.00",
-          "priceEdited": false
-        },
-        {
-          "id": 12,
-          "name": "12-FIO MISTO",
-          "weight": 0.3,
-          "value": "2.00",
-          "total": "0.60",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 10,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-12",
-      "time": "08:43",
-      "timestamp": 1747050214859,
-      "items": [
-        {
-          "id": 11,
-          "name": "11-FERRO",
-          "weight": 0.1,
-          "value": "0.40",
-          "total": "0.04",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 11,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-12",
-      "time": "08:45",
-      "timestamp": 1747050331437,
-      "items": [
-        {
-          "id": 11,
-          "name": "11-FERRO",
-          "weight": 0.1,
-          "value": "0.40",
-          "total": "0.04",
+          "total": "0.30",
           "priceEdited": false
         }
       ],
       "finalized": true
     }
   ],
-  "nextCommandNumber": 12,
+  "nextCommandNumber": 3,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
-  "nextMaterialId": 30,
-  "lastSync": "2025-05-12T11:45:51.267Z"
+  "nextMaterialId": 25,
+  "lastSync": "2025-05-12T13:12:00.015Z"
 }
