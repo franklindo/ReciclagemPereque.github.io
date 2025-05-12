@@ -218,11 +218,32 @@
       "clientName": "Cliente 4"
     }
   },
-  "commands": [],
-  "nextCommandNumber": 1,
+  "commands": [
+    {
+      "number": 7,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-12",
+      "time": "08:24",
+      "timestamp": 1747049078673,
+      "items": [
+        {
+          "id": 16,
+          "name": "16-LATA",
+          "weight": 0.1,
+          "value": "6.00",
+          "total": "0.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    }
+  ],
+  "nextCommandNumber": 8,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 30,
-  "lastSync": "2025-05-12T02:23:49.854Z"
+  "lastSync": "2025-05-12T11:24:55.151Z"
 }
