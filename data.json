@@ -274,12 +274,56 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 9,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente 1",
+      "date": "2025-05-12",
+      "time": "08:36",
+      "timestamp": 1747049783256,
+      "items": [
+        {
+          "id": 16,
+          "name": "16-LATA",
+          "weight": 2.4,
+          "value": "6.00",
+          "total": "14.40",
+          "priceEdited": false
+        },
+        {
+          "id": 17,
+          "name": "17-METAL",
+          "weight": 0.6,
+          "value": "12.00",
+          "total": "7.20",
+          "priceEdited": false
+        },
+        {
+          "id": 15,
+          "name": "15-INSTALAÇÃO",
+          "weight": 1.5,
+          "value": "12.00",
+          "total": "18.00",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "12-FIO MISTO",
+          "weight": 0.3,
+          "value": "2.00",
+          "total": "0.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 9,
+  "nextCommandNumber": 10,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 30,
-  "lastSync": "2025-05-12T11:30:51.154Z"
+  "lastSync": "2025-05-12T11:42:39.283Z"
 }
