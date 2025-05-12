@@ -302,12 +302,88 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 8,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-12",
+      "time": "13:38",
+      "timestamp": 1747067901957,
+      "items": [
+        {
+          "id": 6,
+          "name": "06-CADE",
+          "weight": 1,
+          "value": "3.00",
+          "total": "3.00",
+          "priceEdited": false
+        },
+        {
+          "id": 19,
+          "name": "18-MOTG",
+          "weight": 1,
+          "value": "12.00",
+          "total": "12.00",
+          "priceEdited": false
+        },
+        {
+          "id": 16,
+          "name": "24-RADI",
+          "weight": 10.6,
+          "value": "7.00",
+          "total": "74.20",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "11-FERR",
+          "weight": 11.3,
+          "value": "0.40",
+          "total": "4.52",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "17-META",
+          "weight": 3.5,
+          "value": "12.00",
+          "total": "42.00",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "16-LATA",
+          "weight": 2.6,
+          "value": "7.00",
+          "total": "18.20",
+          "priceEdited": true
+        },
+        {
+          "id": 4,
+          "name": "09-CHAP",
+          "weight": 9.3,
+          "value": "3.50",
+          "total": "32.55",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "02-ACO2",
+          "weight": 1.8,
+          "value": "32.00",
+          "total": "57.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 8,
+  "nextCommandNumber": 9,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-12T13:29:30.966Z"
+  "lastSync": "2025-05-12T16:43:01.401Z"
 }
