@@ -2,164 +2,206 @@
   "materials": [
     {
       "id": 1,
-      "name": "Lata",
+      "name": "01-ACO1",
       "icon": "-",
-      "buyPrice": 6,
-      "sellPrice": 9
+      "buyPrice": 35,
+      "sellPrice": 48.5
     },
     {
       "id": 2,
-      "name": "Ferro",
+      "name": "02-ACO2",
       "icon": "-",
-      "buyPrice": 0.4,
-      "sellPrice": 0.7
+      "buyPrice": 32,
+      "sellPrice": 45.5
     },
     {
       "id": 3,
-      "name": "Perfil",
+      "name": "03-ARO",
       "icon": "-",
-      "buyPrice": 7,
-      "sellPrice": 10
-    },
-    {
-      "id": 4,
-      "name": "Chapa",
-      "icon": "-",
-      "buyPrice": 4,
-      "sellPrice": 8
-    },
-    {
-      "id": 5,
-      "name": "Panela",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 8
-    },
-    {
-      "id": 6,
-      "name": "Bloco",
-      "icon": "-",
-      "buyPrice": 2,
-      "sellPrice": 7.5
-    },
-    {
-      "id": 7,
-      "name": "Fio Insta",
-      "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 20
-    },
-    {
-      "id": 8,
-      "name": "Fio Cabo",
-      "icon": "-",
-      "buyPrice": 15,
-      "sellPrice": 37
-    },
-    {
-      "id": 9,
-      "name": "Fio Misto",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 10
-    },
-    {
-      "id": 10,
-      "name": "Garimpo",
-      "icon": "-",
-      "buyPrice": 1,
-      "sellPrice": 3
-    },
-    {
-      "id": 11,
-      "name": "Bateria",
-      "icon": "-",
-      "buyPrice": 2.5,
-      "sellPrice": 3.2
-    },
-    {
-      "id": 12,
-      "name": "Aro",
-      "icon": "-",
-      "buyPrice": 2,
+      "buyPrice": 3,
       "sellPrice": 7
     },
     {
-      "id": 13,
-      "name": "Panela",
-      "icon": "-",
-      "buyPrice": 5,
-      "sellPrice": 8
-    },
-    {
-      "id": 14,
-      "name": "Roda",
-      "icon": "-",
-      "buyPrice": 7,
-      "sellPrice": 12
-    },
-    {
-      "id": 15,
-      "name": "Chumbo",
+      "id": 4,
+      "name": "04-BATERIA",
       "icon": "-",
       "buyPrice": 2,
       "sellPrice": 3.5
     },
     {
-      "id": 16,
-      "name": "C1",
+      "id": 5,
+      "name": "05-BLOCO",
       "icon": "-",
-      "buyPrice": 35,
-      "sellPrice": 46
+      "buyPrice": 2,
+      "sellPrice": 6
     },
     {
-      "id": 17,
-      "name": "C2",
+      "id": 6,
+      "name": "06-CADEIRA A",
       "icon": "-",
-      "buyPrice": 32,
-      "sellPrice": 42
+      "buyPrice": 3,
+      "sellPrice": 7.5
     },
     {
-      "id": 18,
-      "name": "Metal",
+      "id": 7,
+      "name": "07-CABO",
       "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 25
+      "buyPrice": 15,
+      "sellPrice": 36.5
     },
     {
-      "id": 19,
-      "name": "Fio PP",
+      "id": 8,
+      "name": "08-CAIXA",
       "icon": "-",
       "buyPrice": 5,
       "sellPrice": 12
     },
     {
+      "id": 9,
+      "name": "09-CHAPA",
+      "icon": "-",
+      "buyPrice": 3.5,
+      "sellPrice": 7.5
+    },
+    {
+      "id": 10,
+      "name": "10-CHUMBO",
+      "icon": "-",
+      "buyPrice": 2.5,
+      "sellPrice": 6
+    },
+    {
+      "id": 11,
+      "name": "11-FERRO",
+      "icon": "-",
+      "buyPrice": 0.4,
+      "sellPrice": 0.6
+    },
+    {
+      "id": 12,
+      "name": "12-FIO MISTO",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 11
+    },
+    {
+      "id": 13,
+      "name": "13-GARIMPO",
+      "icon": "-",
+      "buyPrice": 1,
+      "sellPrice": 2
+    },
+    {
+      "id": 14,
+      "name": "14-INOX",
+      "icon": "-",
+      "buyPrice": 2.5,
+      "sellPrice": 4.5
+    },
+    {
+      "id": 15,
+      "name": "15-INSTALAÇÃO",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 22
+    },
+    {
+      "id": 16,
+      "name": "16-LATA",
+      "icon": "-",
+      "buyPrice": 6,
+      "sellPrice": 9
+    },
+    {
+      "id": 17,
+      "name": "17-METAL",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 28
+    },
+    {
+      "id": 18,
+      "name": "18-MOTOR G",
+      "icon": "-",
+      "buyPrice": 12,
+      "sellPrice": 28
+    },
+    {
+      "id": 19,
+      "name": "19-PANELA LIMPA",
+      "icon": "-",
+      "buyPrice": 4,
+      "sellPrice": 7.5
+    },
+    {
       "id": 20,
-      "name": "Inox",
+      "name": "20-PANELA MISTA",
       "icon": "-",
       "buyPrice": 2.5,
       "sellPrice": 5
     },
     {
       "id": 21,
-      "name": "Motor",
+      "name": "21-PERFIL LIMPO",
       "icon": "-",
-      "buyPrice": 12,
-      "sellPrice": 20
+      "buyPrice": 7,
+      "sellPrice": 10
     },
     {
       "id": 22,
-      "name": "Outros 520",
+      "name": "22-PERFIL MISTO",
       "icon": "-",
-      "buyPrice": 1,
-      "sellPrice": 2
+      "buyPrice": 5,
+      "sellPrice": 8
     },
     {
       "id": 23,
-      "name": "Oleo",
+      "name": "23-RADIADOR A",
       "icon": "-",
       "buyPrice": 1,
-      "sellPrice": 2.5
+      "sellPrice": 7
+    },
+    {
+      "id": 24,
+      "name": "24-RADIADOR C",
+      "icon": "-",
+      "buyPrice": 7,
+      "sellPrice": 20
+    },
+    {
+      "id": 25,
+      "name": "25-RODA A",
+      "icon": "-",
+      "buyPrice": 7,
+      "sellPrice": 12
+    },
+    {
+      "id": 26,
+      "name": "26-TV LED",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 5
+    },
+    {
+      "id": 27,
+      "name": "27-TV TUBO",
+      "icon": "-",
+      "buyPrice": 5,
+      "sellPrice": 10
+    },
+    {
+      "id": 28,
+      "name": "28-ZAMARK",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 10
+    },
+    {
+      "id": 29,
+      "name": "29-CABO_PP",
+      "icon": "-",
+      "buyPrice": 2,
+      "sellPrice": 12
     }
   ],
   "clientsData": {
@@ -176,544 +218,11 @@
       "clientName": "Cliente 4"
     }
   },
-  "commands": [
-    {
-      "number": 2,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-07",
-      "time": "11:27",
-      "timestamp": 1746628023211,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 1,
-          "value": "6.00",
-          "total": "6.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 4,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "10:47",
-      "timestamp": 1746971266217,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 66,
-          "value": "6.00",
-          "total": "396.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 5,
-      "operation": "compra",
-      "clientId": 2,
-      "clientName": "Cliente 2",
-      "date": "2025-05-11",
-      "time": "10:55",
-      "timestamp": 1746971739334,
-      "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 6,
-          "value": "0.40",
-          "total": "2.40",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 6,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "10:56",
-      "timestamp": 1746971777574,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 3,
-          "value": "6.00",
-          "total": "18.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 1,
-      "operation": "compra",
-      "clientId": 4,
-      "clientName": "Cliente 4",
-      "date": "2025-05-07",
-      "time": "07:25",
-      "timestamp": 1746613557626,
-      "items": [
-        {
-          "id": 12,
-          "name": "Aro",
-          "weight": 3,
-          "value": "2.00",
-          "total": "6.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 7,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "13:37",
-      "timestamp": 1746981471204,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 12,
-          "value": "6.00",
-          "total": "72.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 8,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "13:42",
-      "timestamp": 1746981761342,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 6,
-          "value": "6.00",
-          "total": "36.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 9,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "13:43",
-      "timestamp": 1746981784326,
-      "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 12,
-          "value": "0.40",
-          "total": "4.80",
-          "priceEdited": false
-        },
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 33,
-          "value": "0.40",
-          "total": "13.20",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 10,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "13:48",
-      "timestamp": 1746982135929,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 5,
-          "value": "6.00",
-          "total": "30.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 11,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "13:54",
-      "timestamp": 1746982482624,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 3,
-          "value": "6.00",
-          "total": "18.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 12,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "14:58",
-      "timestamp": 1746986290869,
-      "items": [
-        {
-          "id": 6,
-          "name": "Bloco",
-          "weight": 10,
-          "value": "2.00",
-          "total": "20.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 13,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:16",
-      "timestamp": 1746987386037,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 2,
-          "value": "6.00",
-          "total": "12.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 14,
-      "operation": "venda",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:23",
-      "timestamp": 1746987784553,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 23,
-          "value": "9.00",
-          "total": "207.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 15,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:29",
-      "timestamp": 1746988182004,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 1,
-          "value": "6.00",
-          "total": "6.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 16,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:30",
-      "timestamp": 1746988201327,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 23,
-          "value": "6.00",
-          "total": "138.00",
-          "priceEdited": false
-        },
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 12,
-          "value": "6.00",
-          "total": "72.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 17,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:31",
-      "timestamp": 1746988319067,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 2,
-          "value": "6.00",
-          "total": "12.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 18,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:32",
-      "timestamp": 1746988365773,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 3,
-          "value": "6.00",
-          "total": "18.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 19,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:33",
-      "timestamp": 1746988401396,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 2,
-          "value": "6.00",
-          "total": "12.00",
-          "priceEdited": false
-        },
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 56,
-          "value": "6.00",
-          "total": "336.00",
-          "priceEdited": false
-        },
-        {
-          "id": 4,
-          "name": "Chapa",
-          "weight": 12,
-          "value": "4.00",
-          "total": "48.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 20,
-      "operation": "compra",
-      "clientId": 2,
-      "clientName": "Cliente 2",
-      "date": "2025-05-11",
-      "time": "15:36",
-      "timestamp": 1746988571949,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 3,
-          "value": "6.00",
-          "total": "18.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 21,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:37",
-      "timestamp": 1746988654506,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 12,
-          "value": "6.00",
-          "total": "72.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 22,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:40",
-      "timestamp": 1746988801433,
-      "items": [
-        {
-          "id": 2,
-          "name": "Ferro",
-          "weight": 26,
-          "value": "0.40",
-          "total": "10.40",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 23,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:44",
-      "timestamp": 1746989049238,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 2,
-          "value": "6.00",
-          "total": "12.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 24,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:47",
-      "timestamp": 1746989264506,
-      "items": [
-        {
-          "id": 1,
-          "name": "Lata",
-          "weight": 33,
-          "value": "6.00",
-          "total": "198.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 25,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:52",
-      "timestamp": 1746989544013,
-      "items": [
-        {
-          "id": 4,
-          "name": "Chapa",
-          "weight": 2,
-          "value": "4.00",
-          "total": "8.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    },
-    {
-      "number": 26,
-      "operation": "compra",
-      "clientId": 1,
-      "clientName": "Cliente 1",
-      "date": "2025-05-11",
-      "time": "15:54",
-      "timestamp": 1746989692124,
-      "items": [
-        {
-          "id": 10,
-          "name": "Garimpo",
-          "weight": 4,
-          "value": "1.00",
-          "total": "4.00",
-          "priceEdited": false
-        }
-      ],
-      "finalized": true
-    }
-  ],
-  "nextCommandNumber": 27,
+  "commands": [],
+  "nextCommandNumber": 1,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
-  "nextMaterialId": 24,
-  "lastSync": "2025-05-11T18:55:08.642Z"
+  "nextMaterialId": 30,
+  "lastSync": "2025-05-12T02:23:49.854Z"
 }
