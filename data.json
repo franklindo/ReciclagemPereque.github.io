@@ -554,12 +554,32 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 21,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-13",
+      "time": "15:06",
+      "timestamp": 1747159608901,
+      "items": [
+        {
+          "id": 2,
+          "name": "11-FERR",
+          "weight": 1,
+          "value": "0.40",
+          "total": "0.40",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 20,
+  "nextCommandNumber": 22,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-13T18:04:15.182Z"
+  "lastSync": "2025-05-13T18:10:42.201Z"
 }
