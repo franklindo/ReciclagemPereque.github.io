@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Reciclagem - Completo</title>
+        <!-- Adicionando a biblioteca MQTT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -251,7 +253,103 @@
             background-color: #fff3cd;
             color: #856404;
         }
+        /* Estilo dos botões redondos (específico para materiais) */
+        /* Container principal - SEMPRE 4 COLUNAS */
+        .round-buttons-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(60px, 1fr)); /* 4 colunas flexíveis */
+            gap: 10px; /* Espaçamento reduzido */
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: auto; /* Permite rolagem horizontal se necessário */
+            -webkit-overflow-scrolling: touch; /* Rolagem suave em iOS */
+        }
+
+        /* Estilo dos botões redondos - versão otimizada */
+        .material-round-button {
+            aspect-ratio: 1/1;
+            border-radius: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            font-size: 14px; /* Tamanho reduzido para mobile */
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+            transition: all 0.2s ease;
+            padding: 5px;
+            min-width: 0; /* Permite que o botão encolha */
+            overflow: hidden;
+        }
+
+        /* Efeitos de interação */
+        .material-round-button:active {
+            transform: scale(0.96);
+            opacity: 0.9;
+        }
+
+        /* Ícones dentro dos botões */
+        .material-round-button i {
+            font-size: 20px; /* Tamanho reduzido */
+            margin-bottom: 2px;
+        }
+
+        /* Texto dentro dos botões */
+        .material-round-button span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding: 0 2px;
+        }
+
+        /* Barra de rolagem personalizada (opcional) */
+        .round-buttons-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        .round-buttons-container::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 4px;
+        }
+        @media (max-width: 360px) {
+            .material-round-button {
+                font-size: 8px;
+            }
+            .material-round-button i {
+                font-size: 14px;
+            }
+        }
+
+        /* REMOVIDA a media query que mudava para 2 colunas */
+        /* AGORA SEMPRE MANTÉM 4 COLUNAS */
+        /* Cores para os grupos de botões */
+        .material-round-button.color-group-1 {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .material-round-button.color-group-2 {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+
+        .material-round-button.color-group-3 {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .material-round-button.color-group-4 {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+
+        .material-round-button.color-group-5 {
+            background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+        }
     </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Tela 0 - Menu Principal -->
@@ -269,21 +367,17 @@
         </div>
     </div>
 
-    <!-- Tela 1 - Clientes -->
-    <div id="screen1" class="container">
-        <h1 id="operationTitle"></h1>
-        <h3>Comanda #<span id="commandNumber"></span></h3>
-        <div class="grid-container" id="clientGrid"></div>
-        <button onclick="cancelCommand(); showScreen(0)" class="btn-secondary">Cancelar</button>
-        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
+    <!-- Tela 1 - Clientes (Removida pois não é mais necessária) -->
+    <div id="screen1" class="container" style="display: none;">
+        <!-- Conteúdo removido -->
     </div>
     
     <!-- Tela 2 - Materiais -->
     <div id="screen2" class="container">
         <h1 id="clientTitle"></h1>
         <h3>Comanda #<span id="commandNumber2"></span></h3>
-        <div class="grid-container" id="materialGrid"></div>
-        <button onclick="showScreen(1)" class="btn-secondary">Voltar</button>
+        <div class="round-buttons-container" id="materialGrid"></div>
+        <button onclick="showScreen(0)" class="btn-secondary">Voltar</button>
     </div>
     
     <!-- Tela 3 - Cadastro -->
@@ -314,7 +408,7 @@
         
         <div class="form-group">
             <label>Peso (kg):</label>
-            <input type="number" id="materialWeight" step="0.01" min="0">
+            <input type="text" id="materialWeight" inputmode="decimal" pattern="[0-9]+([.,][0-9]+)?" />
         </div>
         
         <button id="addBtn">Adicionar à Comanda</button>
@@ -338,7 +432,7 @@
             </div>
         </div>
         
-        <button id="finalizeBtn" class="btn-primary" style="display: none;">Finalizar Comanda</button>
+        <button id="finalizeBtn" class="btn-primary" style="display: none;" onclick="confirmFinalize()">Finalizar Comanda</button>
         <button onclick="showScreen(2)" class="btn-secondary">Voltar</button>
     </div>
 
@@ -505,36 +599,36 @@
     <script>
         // Dados iniciais
         let materials = JSON.parse(localStorage.getItem('reciclagemMaterials')) || [
-            { id: 1, name: 'Lata', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
-            { id: 2, name: 'Ferro', icon: '-', buyPrice: 0.40, sellPrice: 0.70 },
-            { id: 3, name: 'Perfil', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
-            { id: 4, name: 'Chapa', icon: '-', buyPrice: 4.0, sellPrice: 8.0 },
-            { id: 5, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
-            { id: 6, name: 'Bloco', icon: '-', buyPrice: 2.0, sellPrice: 7.5 },
-            { id: 7, name: 'Fio Insta', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
-            { id: 8, name: 'Fio Cabo', icon: '-', buyPrice: 15.0, sellPrice: 37.0 },
-            { id: 9, name: 'Fio Misto', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
-            { id: 10, name: 'Garimpo', icon: '-', buyPrice: 1.0, sellPrice: 3.0 },
-            { id: 11, name: 'Bateria', icon: '-', buyPrice: 2.50, sellPrice: 3.20 },
-            { id: 12, name: 'Aro', icon: '-', buyPrice: 2.0, sellPrice: 7.0 },
-            { id: 13, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
-            { id: 14, name: 'Roda', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
-            { id: 15, name: 'Chumbo', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
-            { id: 16, name: 'C1', icon: '-', buyPrice: 35.0, sellPrice: 46.0 },
-            { id: 17, name: 'C2', icon: '-', buyPrice: 32.0, sellPrice: 42.0 },
-            { id: 18, name: 'Metal', icon: '-', buyPrice: 12.0, sellPrice: 25.0 },
-            { id: 19, name: 'Fio PP', icon: '-', buyPrice: 5.0, sellPrice: 12.0 },
-            { id: 20, name: 'Inox', icon: '-', buyPrice: 2.50, sellPrice: 5.0 },
-            { id: 21, name: 'Motor', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
-            { id: 22, name: 'Outros 520', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
-            { id: 23, name: 'Oleo', icon: '-', buyPrice: 1.0, sellPrice: 2.5 }
+
+                    { id: 1, name: 'LATA', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
+                    { id: 2, name: 'FERRO', icon: '-', buyPrice: 0.40, sellPrice: 0.60 },
+                    { id: 3, name: 'PERFIL', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
+                    { id: 4, name: 'CHAPA', icon: '-', buyPrice: 3.5, sellPrice: 7.5 },
+                    { id: 5, name: 'BLOCO', icon: '-', buyPrice: 2.0, sellPrice: 6.0 },
+                    { id: 6, name: 'CADEIRA', icon: '-', buyPrice: 3.0, sellPrice: 7.5 },
+                    { id: 7, name: 'PANELA', icon: '-', buyPrice: 4.0, sellPrice: 7.5 },
+                    { id: 8, name: 'RODA', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
+                    { id: 9, name: 'ACO1', icon: '-', buyPrice: 35.0, sellPrice: 48.5 },
+                    { id: 10, name: 'ACO2', icon: '-', buyPrice: 32.0, sellPrice: 45.5 },
+                    { id: 11, name: 'METAL', icon: '-', buyPrice: 12.0, sellPrice: 28 },
+                    { id: 12, name: 'INSTAL', icon: '-', buyPrice: 12.0, sellPrice: 22.0 },
+                    { id: 13, name: 'CABO', icon: '-', buyPrice: 15, sellPrice: 36.5 },
+                    { id: 14, name: 'FIO_MX', icon: '-', buyPrice: 2.0, sellPrice: 11.0 },
+                    { id: 15, name: 'CAB_PP', icon: '-', buyPrice: 2.0, sellPrice: 12.0 },
+                    { id: 16, name: 'RADIADOR', icon: '-', buyPrice: 7.0, sellPrice: 20.0 },
+                    { id: 17, name: 'GARIMPO', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
+                    { id: 18, name: 'INOX', icon: '-', buyPrice: 2.5, sellPrice: 4.5 },
+                    { id: 19, name: 'MOTOR_G', icon: '-', buyPrice: 12.0, sellPrice: 28.0 },
+                    { id: 20, name: 'BATERIA', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
+                    { id: 21, name: 'TV LED', icon: '-', buyPrice: 2.0, sellPrice: 5.0 },
+                    { id: 22, name: 'TV TUBO', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
+                    { id: 23, name: 'ZAMARK', icon: '-', buyPrice: 2.0, sellPrice: 10.0 },
+                    { id: 24, name: 'CHUMBO', icon: '-', buyPrice: 2.5, sellPrice: 6.0 }
+       
         ];
 
-        let clientsData = JSON.parse(localStorage.getItem('reciclagemData')) || {
-            1: { clientName: "Cliente 1" },
-            2: { clientName: "Cliente 2" },
-            3: { clientName: "Cliente 3" },
-            4: { clientName: "Cliente 4" }
+        let clientsData = { 
+            1: { clientName: "Cliente Único" } 
         };
         
         let commands = JSON.parse(localStorage.getItem('reciclagemCommands')) || [];
@@ -559,26 +653,171 @@
         let currentMaterial = null;
         let editingPrice = false;
 
+        //MQTT
+        // MQTT Configuration
+        const mqttBroker = "192.168.1.155";
+        const mqttPort = 9001;
+        const mqttTopic = "reciclagem/comandas";
+        let mqttClient = null;
+
+        // Função para conectar ao broker MQTT
+        function connectToMqttBroker() {
+                try {
+                    if (typeof Paho === 'undefined') {
+                        console.error("Biblioteca Paho MQTT não carregada!");
+                        return;
+                    }
+                    console.log("Paho MQTT carregado:", Paho);
+
+                    // Criação correta do client
+                    mqttClient = new Paho.Client(mqttBroker, mqttPort, "reciclagem-web-" + Math.random());
+
+                    // Callbacks
+                    mqttClient.onConnectionLost = onConnectionLost;
+                    mqttClient.onMessageArrived = onMessageArrived;
+
+                    // Opções de conexão
+                    const connectOptions = {
+                        timeout: 10,
+                        onSuccess: onConnect,
+                        onFailure: onFailure,
+                        useSSL: false,
+                        cleanSession: true,
+                        mqttVersion: 4,       // Versão do protocolo
+                        keepAliveInterval: 60, // Keep-alive para celular
+                        cleanSession: true,
+                        reconnect: true       // Tentar reconectar automaticamente
+                    };
+
+                    mqttClient.connect(connectOptions);
+                } catch (error) {
+                    console.error("Erro ao conectar ao MQTT:", error);
+                }
+            }
+
+            // Callback de sucesso na conexão
+            function onConnect() {
+                console.log("✅ Conectado ao broker MQTT em", mqttBroker);
+                mqttClient.subscribe(mqttTopic);
+            }
+
+            // Callback de falha na conexão
+            function onFailure(error) {
+                console.error("❌ Falha na conexão MQTT:", error.errorMessage);
+                setTimeout(connectToMqttBroker, 5000);
+            }
+
+            // Callback de perda de conexão
+            function onConnectionLost(responseObject) {
+                if (responseObject.errorCode !== 0) {
+                    console.error("⚠️ Conexão MQTT perdida:", responseObject.errorMessage);
+                }
+                setTimeout(connectToMqttBroker, 5000);
+            }
+
+            // Callback de mensagem recebida
+            function onMessageArrived(message) {
+                console.log("📩 Mensagem recebida:", message.payloadString);
+                document.getElementById("mensagens").innerHTML += `<p><strong>${message.destinationName}</strong>: ${message.payloadString}</p>`;
+            }
+
+            function sendCommandViaMqtt(commandData) {
+                if (!mqttClient || !mqttClient.isConnected()) {
+                    console.warn("MQTT não conectado, tentando reconectar...");
+                    connectToMqttBroker();
+                    setTimeout(() => sendCommandViaMqtt(commandData), 1000);
+                    return;
+                }
+
+                try {
+                    // Campos simples
+                    publish("reciclagem/comandas/numero", String(commandData.numero));
+                    publish("reciclagem/comandas/tipo", commandData.tipo);
+                    publish("reciclagem/comandas/data", commandData.data);
+                    publish("reciclagem/comandas/hora", commandData.hora);
+                    publish("reciclagem/comandas/total", commandData.total);
+                    publish("reciclagem/comandas/timestamp", String(commandData.timestamp));
+
+                    // Campos do cliente
+                    publish("reciclagem/comandas/cliente/id", String(commandData.cliente.id));
+                    publish("reciclagem/comandas/cliente/nome", commandData.cliente.nome);
+
+                    // Apenas o primeiro item (pode colocar loop se quiser enviar vários)
+                    const item = commandData.itens[0];
+                    publish("reciclagem/comandas/item/material", item.material);
+                    publish("reciclagem/comandas/item/peso", String(item.peso));
+                    publish("reciclagem/comandas/item/valor_unitario", item.valor_unitario);
+                    publish("reciclagem/comandas/item/total_item", item.total_item);
+
+                    console.log("✅ Comanda enviada por tópicos separados.");
+                } catch (error) {
+                    console.error("Erro ao enviar comanda por partes:", error);
+                }
+            }
+
+            function publish(topic, payload) {
+                let message = new Paho.Message(payload);
+                message.destinationName = topic;
+                mqttClient.send(message);
+            }
+
+
+            // Conectar automaticamente ao carregar a página
+            window.onload = connectToMqttBroker;
+
+        // O restante do seu código JavaScript permanece o mesmo
+
         // Inicia uma nova operação (compra ou venda)
         function startNewCommand(operationType) {
             currentOperation = operationType;
             currentCommand = null;
             editingPrice = false;
             
-            document.getElementById('operationTitle').textContent = 
-                `${operationType.toUpperCase()} - Selecione o Cliente`;
+            // Cria a comanda diretamente sem selecionar cliente
+            currentCommand = {
+                number: nextCommandNumber++,
+                operation: currentOperation,
+                clientId: 1, // Usando cliente padrão
+                clientName: "Cliente Único", // Nome padrão
+                date: new Date().toISOString().split('T')[0],
+                time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+                timestamp: new Date().getTime(),
+                items: [],
+                finalized: false
+            };
             
-            showScreen(1);
+            localStorage.setItem('nextCommandNumber', nextCommandNumber);
+
+            // Atualiza a exibição
+            updateCommandDisplay();
+            
+            // Define o cliente padrão na tela de cadastro
+            const currentClientDisplay = document.getElementById('currentClientDisplay');
+            if (currentClientDisplay) {
+                currentClientDisplay.value = "Cliente Único";
+            }
+            
+            // Vai direto para a tela de materiais (screen2)
+            showScreen(2);
+            
+            // Envia sinal de inicialização via MQTT
+            sendinicializaComandaViaMqtt();
         }
         
         // Atualiza a exibição do número da comanda
         function updateCommandDisplay() {
-            if (currentCommand) {
-                document.getElementById('commandNumber').textContent = currentCommand.number;
-                document.getElementById('commandNumber2').textContent = currentCommand.number;
-                document.getElementById('commandNumber3').textContent = currentCommand.number;
-                document.getElementById('operationTypeDisplay').value = currentOperation.toUpperCase();
-            }
+            if (!currentCommand) return;
+            
+            // Atualiza apenas os elementos que existem
+            const commandNumberEl = document.getElementById('commandNumber');
+            const commandNumber2El = document.getElementById('commandNumber2');
+            const commandNumber3El = document.getElementById('commandNumber3');
+            const operationTypeDisplayEl = document.getElementById('operationTypeDisplay');
+            
+            if (commandNumberEl) commandNumberEl.textContent = currentCommand.number;
+            if (commandNumber2El) commandNumber2El.textContent = currentCommand.number;
+            if (commandNumber3El) commandNumber3El.textContent = currentCommand.number;
+            if (operationTypeDisplayEl) operationTypeDisplayEl.value = currentOperation ? currentOperation.toUpperCase() : '';
         }
         
         // Mostra a tela solicitada
@@ -699,7 +938,6 @@
                 }
                 
                 clientDiv.innerHTML += `<h3>${clientData.clientName}</h3>`;
-                
                 clientDiv.onclick = () => {
                     currentClient = parseInt(clientId);
                     
@@ -741,14 +979,18 @@
             const grid = document.getElementById('materialGrid');
             grid.innerHTML = '';
             
-            materials.forEach(mat => {
-                const btn = document.createElement('div');
-                btn.className = 'card';
+            materials.forEach((mat, index) => {
+                const btn = document.createElement('button');
+                
+                // Determina o grupo de cor (0-4)
+                const colorGroup = (Math.floor(index / 4) % 5 + 1); // 5 grupos de cores
+                
+                btn.className = `material-round-button color-group-${colorGroup}`;
                 btn.innerHTML = `
-                    <div style="font-size:24px;">${mat.icon}</div>
-                    <div>${mat.name}</div>
-                    <div style="font-size:12px;margin-top:5px;">
-                        ${currentOperation === 'compra' ? 'Compra: R$ ' + mat.buyPrice.toFixed(2) : 'Venda: R$ ' + mat.sellPrice.toFixed(2)}
+                    <i class="fas fa-${getMaterialIcon(mat.name)}"></i>
+                    <span>${mat.name}</span>
+                    <div class="material-price">
+                        ${currentOperation === 'compra' ? 'R$' + mat.buyPrice.toFixed(2) : 'R$' + mat.sellPrice.toFixed(2)}
                     </div>
                 `;
                 
@@ -761,16 +1003,27 @@
                     
                     const price = currentOperation === 'compra' ? mat.buyPrice : mat.sellPrice;
                     document.getElementById('materialValue').value = price.toFixed(2);
-                    
-                    document.getElementById('materialValue').readOnly = false;
-                    document.getElementById('materialValue').style.backgroundColor = '';
-                    
                     document.getElementById('materialWeight').value = '';
                     document.getElementById('materialWeight').focus();
                 };
                 
                 grid.appendChild(btn);
             });
+        }
+
+        // Função auxiliar para escolher ícones com base no material
+        function getMaterialIcon(materialName) {
+            const icons = {
+                'Lata': 'wine-bottle',
+                'Ferro': 'magnet',
+                'Cobre': 'bolt',
+                'Alumínio': 'lightbulb',
+                'Bateria': 'battery-full',
+                'Oleo': 'oil-can',
+                'Motor': 'cog',
+                // Adicione mais mapeamentos conforme necessário
+            };
+            return icons[materialName] || 'recycle'; // Ícone padrão ♻
         }
         
         // Atualiza a lista de materiais da comanda
@@ -809,11 +1062,17 @@
         
         // Remove um item da comanda
         function removeItem(index) {
-            currentCommand.items.splice(index, 1);
-            updateMaterialsList();
+            if (confirm(`Tem certeza que deseja remover o item "${currentCommand.items[index].name}" da comanda?`)) {
+                // Envia o sinal de cancelamento via MQTT
+                sendCancelMaterialViaMqtt(index);
+                
+                // Remove o item da comanda
+                currentCommand.items.splice(index, 1);
+                updateMaterialsList();
+            }
         }
         
-        // Finaliza a comanda atual
+        // Modificação da função finalizeCommand para usar MQTT
         function finalizeCommand() {
             if (currentCommand.items.length === 0) {
                 alert("Adicione pelo menos um item à comanda!");
@@ -832,6 +1091,9 @@
             
             alert(`Comanda #${currentCommand.number} finalizada com sucesso!\nTotal: R$ ${document.getElementById('grandTotalValue').textContent}`);
             
+                // Envia apenas o valor 1 via MQTT
+            sendFinalizeSignalViaMqtt();
+            
             currentCommand = null;
             currentOperation = null;
             currentClient = null;
@@ -839,9 +1101,19 @@
             
             showScreen(0);
             
-            // Sincroniza com o GitHub após finalizar comanda
+            // Sincroniza com GitHub
             syncToGithub();
         }
+
+        // Inicializa a conexão MQTT quando a página carrega
+        document.addEventListener('DOMContentLoaded', function() {
+            showScreen(0);
+            
+            // Espera 1 segundo para garantir que a biblioteca Paho está carregada
+            setTimeout(() => {
+                connectToMqttBroker();
+            }, 1000);
+        });
 
         // Gera relatório diário
         function generateDailyReport() {
@@ -1289,14 +1561,19 @@
             const defaultPrice = currentOperation === 'compra' ? currentMaterial.buyPrice : currentMaterial.sellPrice;
             const priceEdited = value !== defaultPrice;
             
-            currentCommand.items.push({
+            const materialData = {
                 id: currentMaterial.id,
                 name: currentMaterial.name,
                 weight: weight,
                 value: value.toFixed(2),
                 total: total,
                 priceEdited: priceEdited
-            });
+            };
+            
+            currentCommand.items.push(materialData);
+
+                // Envia o material via MQTT
+            sendMaterialViaMqtt(materialData);
             
             if (priceEdited) {
                 alert(`Preço de ${currentMaterial.name} alterado para R$ ${value.toFixed(2)} apenas nesta operação`);
@@ -1311,7 +1588,7 @@
             this.style.backgroundColor = '#ffffcc';
         });
         
-        document.getElementById('finalizeBtn').addEventListener('click', finalizeCommand);
+        //document.getElementById('finalizeBtn').addEventListener('click', finalizeCommand);
         
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
@@ -1335,29 +1612,30 @@
                 localStorage.clear();
                 
                 materials = [
-                    { id: 1, name: 'Lata', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
-                    { id: 2, name: 'Ferro', icon: '-', buyPrice: 0.40, sellPrice: 0.70 },
-                    { id: 3, name: 'Perfil', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
-                    { id: 4, name: 'Chapa', icon: '-', buyPrice: 4.0, sellPrice: 8.0 },
-                    { id: 5, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
-                    { id: 6, name: 'Bloco', icon: '-', buyPrice: 2.0, sellPrice: 7.5 },
-                    { id: 7, name: 'Fio Insta', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
-                    { id: 8, name: 'Fio Cabo', icon: '-', buyPrice: 15.0, sellPrice: 37.0 },
-                    { id: 9, name: 'Fio Misto', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
-                    { id: 10, name: 'Garimpo', icon: '-', buyPrice: 1.0, sellPrice: 3.0 },
-                    { id: 11, name: 'Bateria', icon: '-', buyPrice: 2.50, sellPrice: 3.20 },
-                    { id: 12, name: 'Aro', icon: '-', buyPrice: 2.0, sellPrice: 7.0 },
-                    { id: 13, name: 'Panela', icon: '-', buyPrice: 5.0, sellPrice: 8.0 },
-                    { id: 14, name: 'Roda', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
-                    { id: 15, name: 'Chumbo', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
-                    { id: 16, name: 'C1', icon: '-', buyPrice: 35.0, sellPrice: 46.0 },
-                    { id: 17, name: 'C2', icon: '-', buyPrice: 32.0, sellPrice: 42.0 },
-                    { id: 18, name: 'Metal', icon: '-', buyPrice: 12.0, sellPrice: 25.0 },
-                    { id: 19, name: 'Fio PP', icon: '-', buyPrice: 5.0, sellPrice: 12.0 },
-                    { id: 20, name: 'Inox', icon: '-', buyPrice: 2.50, sellPrice: 5.0 },
-                    { id: 21, name: 'Motor', icon: '-', buyPrice: 12.0, sellPrice: 20.0 },
-                    { id: 22, name: 'Outros 520', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
-                    { id: 23, name: 'Oleo', icon: '-', buyPrice: 1.0, sellPrice: 2.5 }
+                    { id: 1, name: 'LATA', icon: '-', buyPrice: 6.0, sellPrice: 9.0 },
+                    { id: 2, name: 'FERRO', icon: '-', buyPrice: 0.40, sellPrice: 0.60 },
+                    { id: 3, name: 'PERFIL', icon: '-', buyPrice: 7.0, sellPrice: 10.0 },
+                    { id: 4, name: 'CHAPA', icon: '-', buyPrice: 3.5, sellPrice: 7.5 },
+                    { id: 5, name: 'BLOCO', icon: '-', buyPrice: 2.0, sellPrice: 6.0 },
+                    { id: 6, name: 'CADEIRA', icon: '-', buyPrice: 3.0, sellPrice: 7.5 },
+                    { id: 7, name: 'PANELA', icon: '-', buyPrice: 4.0, sellPrice: 7.5 },
+                    { id: 8, name: 'RODA', icon: '-', buyPrice: 7.0, sellPrice: 12.0 },
+                    { id: 9, name: 'ACO1', icon: '-', buyPrice: 35.0, sellPrice: 48.5 },
+                    { id: 10, name: 'ACO2', icon: '-', buyPrice: 32.0, sellPrice: 45.5 },
+                    { id: 11, name: 'METAL', icon: '-', buyPrice: 12.0, sellPrice: 28 },
+                    { id: 12, name: 'INSTAL', icon: '-', buyPrice: 12.0, sellPrice: 22.0 },
+                    { id: 13, name: 'CABO', icon: '-', buyPrice: 15, sellPrice: 36.5 },
+                    { id: 14, name: 'FIO_MX', icon: '-', buyPrice: 2.0, sellPrice: 11.0 },
+                    { id: 15, name: 'CAB_PP', icon: '-', buyPrice: 2.0, sellPrice: 12.0 },
+                    { id: 16, name: 'RADIADOR', icon: '-', buyPrice: 7.0, sellPrice: 20.0 },
+                    { id: 17, name: 'GARIMPO', icon: '-', buyPrice: 1.0, sellPrice: 2.0 },
+                    { id: 18, name: 'INOX', icon: '-', buyPrice: 2.5, sellPrice: 4.5 },
+                    { id: 19, name: 'MOTOR_G', icon: '-', buyPrice: 12.0, sellPrice: 28.0 },
+                    { id: 20, name: 'BATERIA', icon: '-', buyPrice: 2.0, sellPrice: 3.5 },
+                    { id: 21, name: 'TV LED', icon: '-', buyPrice: 2.0, sellPrice: 5.0 },
+                    { id: 22, name: 'TV TUBO', icon: '-', buyPrice: 5.0, sellPrice: 10.0 },
+                    { id: 23, name: 'ZAMARK', icon: '-', buyPrice: 2.0, sellPrice: 10.0 },
+                    { id: 24, name: 'CHUMBO', icon: '-', buyPrice: 2.5, sellPrice: 6.0 }
                 ];
                 
                 clientsData = {
@@ -1595,6 +1873,117 @@
             setTimeout(() => {
                 statusDiv.style.display = 'none';
             }, 5000);
+        }
+        function sendMaterialViaMqtt(materialData) {
+            if (!mqttClient || !mqttClient.isConnected()) {
+                console.warn("MQTT não conectado, tentando reconectar...");
+                connectToMqttBroker();
+                setTimeout(() => sendMaterialViaMqtt(materialData), 1000);
+                return;
+            }
+
+            try {
+                // Campos básicos da comanda
+                publish("reciclagem/comandas/numero", String(currentCommand.number));
+                publish("reciclagem/comandas/tipo", currentOperation);
+                publish("reciclagem/comandas/cliente/id", String(currentClient));
+                publish("reciclagem/comandas/cliente/nome", currentCommand.clientName);
+                
+                // Dados do material
+                publish("reciclagem/comandas/item/material", materialData.name);
+                publish("reciclagem/comandas/item/peso", String(materialData.weight));
+                publish("reciclagem/comandas/item/valor_unitario", materialData.value);
+                publish("reciclagem/comandas/item/total_item", materialData.total);
+                publish("reciclagem/comandas/item/ADD_MAT", "1");
+                
+                console.log("✅ Material enviado por MQTT:", materialData.name);
+            } catch (error) {
+                console.error("Erro ao enviar material por MQTT:", error);
+            }
+        }
+        // Função para enviar apenas o valor 1 quando finalizar a comanda
+        function sendFinalizeSignalViaMqtt() {
+            if (!mqttClient || !mqttClient.isConnected()) {
+                console.warn("MQTT não conectado, tentando reconectar...");
+                connectToMqttBroker();
+                setTimeout(() => sendFinalizeSignalViaMqtt(), 1000);
+                return;
+            }
+
+            try {
+                // Cria mensagem com apenas o valor 1
+                const message = new Paho.Message("1");
+                message.destinationName = "reciclagem/comandas/finalizada";
+                mqttClient.send(message);
+                
+                console.log("✅ Sinal de finalização (1) enviado via MQTT");
+            } catch (error) {
+                console.error("Erro ao enviar sinal de finalização:", error);
+            }
+        }
+        // Função inicializa comanda no INdusoft
+        function sendinicializaComandaViaMqtt() {
+            if (!mqttClient || !mqttClient.isConnected()) {
+                console.warn("MQTT não conectado, tentando reconectar...");
+                connectToMqttBroker();
+                setTimeout(() => sendinicializaComandaViaMqtt(), 1000);
+                return;
+            }
+
+            try {
+                // Cria mensagem com apenas o valor 1
+                const message = new Paho.Message("1");
+                message.destinationName = "reciclagem/comandas/inicializa";
+                mqttClient.send(message);
+                
+                console.log("✅ Sinal de finalização (1) enviado via MQTT");
+            } catch (error) {
+                console.error("Erro ao enviar sinal de finalização:", error);
+            }
+        }
+        function confirmFinalize() {
+            if (currentCommand.items.length === 0) {
+                alert("Adicione pelo menos um item à comanda!");
+                return;
+            }
+            
+            const total = document.getElementById('grandTotalValue').textContent;
+            const confirmMessage = `Tem certeza que deseja FINALIZAR a comanda #${currentCommand.number}?\n\n` +
+                                `Total: R$ ${total}\n\n` +
+                                `Esta ação não pode ser desfeita!`;
+            
+            if (confirm(confirmMessage)) {
+                finalizeCommand();
+            }
+        }
+        function sendCancelMaterialViaMqtt(materialIndex) {
+            if (!mqttClient || !mqttClient.isConnected()) {
+                console.warn("MQTT não conectado, tentando reconectar...");
+                connectToMqttBroker();
+                setTimeout(() => sendCancelMaterialViaMqtt(materialIndex), 1000);
+                return;
+            }
+
+            try {
+                const item = currentCommand.items[materialIndex];
+                
+                // Campos básicos da comanda
+                publish("reciclagem/comandas/numero", String(currentCommand.number));
+                publish("reciclagem/comandas/tipo", currentOperation);
+                publish("reciclagem/comandas/cliente/id", String(currentCommand.clientId));
+                publish("reciclagem/comandas/cliente/nome", currentCommand.clientName);
+                
+                // Dados do material a ser cancelado
+                publish("reciclagem/comandas/item/material", item.name);
+                publish("reciclagem/comandas/item/peso", String(item.weight));
+                publish("reciclagem/comandas/item/valor_unitario", item.value);
+                publish("reciclagem/comandas/item/total_item", item.total);
+                publish("reciclagem/comandas/item/CANCEL_MAT", "1"); // Sinal de cancelamento
+                
+                console.log("✅ Sinal de cancelamento enviado para:", item.name);
+            } catch (error) {
+                console.error("Erro ao enviar cancelamento por MQTT:", error);
+            }
         }
     </script>
 </body>
