@@ -698,12 +698,48 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 28,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-17",
+      "time": "08:34",
+      "timestamp": 1747481669135,
+      "items": [
+        {
+          "id": 2,
+          "name": "11-FERR",
+          "weight": 1.4,
+          "value": "0.40",
+          "total": "0.56",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "17-META",
+          "weight": 0.7,
+          "value": "12.00",
+          "total": "8.40",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "16-LATA",
+          "weight": 1.1,
+          "value": "6.00",
+          "total": "6.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 28,
+  "nextCommandNumber": 29,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-17T11:31:28.638Z"
+  "lastSync": "2025-05-17T12:25:17.380Z"
 }
