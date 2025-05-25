@@ -506,12 +506,40 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 14,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-25",
+      "time": "16:44",
+      "timestamp": 1748202258016,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 46.4,
+          "value": "0.40",
+          "total": "18.56",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 7.5,
+          "value": "3.50",
+          "total": "26.25",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 14,
+  "nextCommandNumber": 15,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-25T19:35:19.519Z"
+  "lastSync": "2025-05-25T19:45:10.024Z"
 }
