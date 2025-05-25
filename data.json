@@ -298,12 +298,40 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 6,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-25",
+      "time": "10:35",
+      "timestamp": 1748180112785,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.2,
+          "value": "6.00",
+          "total": "7.20",
+          "priceEdited": false
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 0.9,
+          "value": "4.00",
+          "total": "3.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 6,
+  "nextCommandNumber": 7,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-25T12:58:22.623Z"
+  "lastSync": "2025-05-25T13:36:50.182Z"
 }
