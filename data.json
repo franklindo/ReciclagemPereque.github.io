@@ -230,12 +230,40 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 3,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-25",
+      "time": "09:55",
+      "timestamp": 1748177724886,
+      "items": [
+        {
+          "id": 22,
+          "name": "TV TUBO",
+          "weight": 1,
+          "value": "5.00",
+          "total": "5.00",
+          "priceEdited": false
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 3.7,
+          "value": "4.00",
+          "total": "14.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 3,
+  "nextCommandNumber": 4,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-25T11:45:22.239Z"
+  "lastSync": "2025-05-25T12:55:54.432Z"
 }
