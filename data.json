@@ -366,12 +366,48 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 9,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-05-25",
+      "time": "15:04",
+      "timestamp": 1748196299491,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 24.9,
+          "value": "0.40",
+          "total": "9.96",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.3,
+          "value": "12.00",
+          "total": "3.60",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 0.4,
+          "value": "2.00",
+          "total": "0.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 9,
+  "nextCommandNumber": 10,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-05-25T17:24:14.158Z"
+  "lastSync": "2025-05-25T18:06:38.477Z"
 }
