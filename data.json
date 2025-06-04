@@ -834,12 +834,48 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 27,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-06-04",
+      "time": "09:20",
+      "timestamp": 1749039625667,
+      "items": [
+        {
+          "id": 21,
+          "name": "TV LED",
+          "weight": 1,
+          "value": "2.00",
+          "total": "2.00",
+          "priceEdited": false
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 0.9,
+          "value": "4.00",
+          "total": "3.60",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 53.9,
+          "value": "0.40",
+          "total": "21.56",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 27,
+  "nextCommandNumber": 28,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-06-04T11:58:11.160Z"
+  "lastSync": "2025-06-04T12:22:31.303Z"
 }
