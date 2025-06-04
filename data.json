@@ -870,12 +870,32 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 28,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-06-04",
+      "time": "09:41",
+      "timestamp": 1749040899831,
+      "items": [
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 0.9,
+          "value": "4.00",
+          "total": "3.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 28,
+  "nextCommandNumber": 29,
   "expenses": [],
   "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-06-04T12:22:31.303Z"
+  "lastSync": "2025-06-04T12:41:54.389Z"
 }
