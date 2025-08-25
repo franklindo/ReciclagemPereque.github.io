@@ -886,9 +886,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 34,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "11:33",
+      "timestamp": 1756132410729,
+      "items": [
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 23,
+          "value": "3.50",
+          "total": "80.50",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 34,
+  "nextCommandNumber": 35,
   "expenses": [
     {
       "id": 1,
@@ -907,10 +927,16 @@
       "description": "Ovo",
       "value": 12,
       "date": "2025-08-25"
+    },
+    {
+      "id": 4,
+      "description": "Pasta termica",
+      "value": 30,
+      "date": "2025-08-25"
     }
   ],
-  "nextExpenseId": 4,
+  "nextExpenseId": 5,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T14:25:19.016Z"
+  "lastSync": "2025-08-25T14:34:29.457Z"
 }
