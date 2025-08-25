@@ -806,9 +806,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 30,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "09:54",
+      "timestamp": 1756126468853,
+      "items": [
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.8,
+          "value": "12.00",
+          "total": "9.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 30,
+  "nextCommandNumber": 31,
   "expenses": [
     {
       "id": 1,
@@ -832,5 +852,5 @@
   "nextExpenseId": 4,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T12:40:45.210Z"
+  "lastSync": "2025-08-25T12:55:00.303Z"
 }
