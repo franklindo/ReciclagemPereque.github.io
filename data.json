@@ -1230,9 +1230,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 48,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "15:50",
+      "timestamp": 1756147832994,
+      "items": [
+        {
+          "id": 21,
+          "name": "TV LED",
+          "weight": 1,
+          "value": "2.00",
+          "total": "2.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 48,
+  "nextCommandNumber": 49,
   "expenses": [
     {
       "id": 1,
@@ -1268,5 +1288,5 @@
   "nextExpenseId": 6,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T18:48:48.554Z"
+  "lastSync": "2025-08-25T18:51:04.932Z"
 }
