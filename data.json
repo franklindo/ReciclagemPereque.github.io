@@ -1086,9 +1086,65 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 42,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "13:16",
+      "timestamp": 1756138587907,
+      "items": [
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.7,
+          "value": "12.00",
+          "total": "8.40",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.7,
+          "value": "6.00",
+          "total": "10.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 43,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "13:34",
+      "timestamp": 1756139642993,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 7.9,
+          "value": "0.40",
+          "total": "3.16",
+          "priceEdited": false
+        },
+        {
+          "id": 22,
+          "name": "TV TUBO",
+          "weight": 1,
+          "value": "5.00",
+          "total": "5.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 42,
+  "nextCommandNumber": 44,
   "expenses": [
     {
       "id": 1,
@@ -1118,5 +1174,5 @@
   "nextExpenseId": 5,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T16:10:00.238Z"
+  "lastSync": "2025-08-25T16:35:00.997Z"
 }
