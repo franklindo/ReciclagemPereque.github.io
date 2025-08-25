@@ -180,25 +180,25 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "16:25",
-      "timestamp": 1755890754996,
+      "date": "2025-08-24",
+      "time": "08:54",
+      "timestamp": 1756036449993,
       "items": [
         {
           "id": 2,
           "name": "FERRO",
-          "weight": 2.1,
+          "weight": 42.4,
           "value": "0.40",
-          "total": "0.84",
+          "total": "16.96",
           "priceEdited": false
         },
         {
           "id": 1,
           "name": "LATA",
-          "weight": 6.4,
-          "value": "7.00",
-          "total": "44.80",
-          "priceEdited": true
+          "weight": 0.05,
+          "value": "6.00",
+          "total": "0.30",
+          "priceEdited": false
         }
       ],
       "finalized": true
@@ -208,24 +208,56 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "16:35",
-      "timestamp": 1755891339726,
+      "date": "2025-08-24",
+      "time": "10:13",
+      "timestamp": 1756041231214,
       "items": [
         {
-          "id": 2,
-          "name": "FERRO",
-          "weight": 0.01,
-          "value": "0.40",
-          "total": "0.00",
-          "priceEdited": false
-        },
+          "id": 1,
+          "name": "LATA",
+          "weight": 3.5,
+          "value": "7.00",
+          "total": "24.50",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 3,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "10:24",
+      "timestamp": 1756041842793,
+      "items": [
         {
-          "id": 2,
-          "name": "FERRO",
-          "weight": 0.1,
-          "value": "0.40",
-          "total": "0.04",
+          "id": 1,
+          "name": "LATA",
+          "weight": 0.5,
+          "value": "6.00",
+          "total": "3.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 4,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "10:40",
+      "timestamp": 1756042837516,
+      "items": [
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 9.6,
+          "value": "3.50",
+          "total": "33.60",
           "priceEdited": false
         }
       ],
@@ -233,19 +265,19 @@
     },
     {
       "number": 5,
-      "operation": "venda",
+      "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "16:47",
-      "timestamp": 1755892070435,
+      "date": "2025-08-24",
+      "time": "10:42",
+      "timestamp": 1756042944666,
       "items": [
         {
           "id": 2,
           "name": "FERRO",
-          "weight": 0.1,
-          "value": "0.60",
-          "total": "0.06",
+          "weight": 11.3,
+          "value": "0.40",
+          "total": "4.52",
           "priceEdited": false
         }
       ],
@@ -256,17 +288,17 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "16:50",
-      "timestamp": 1755892202420,
+      "date": "2025-08-24",
+      "time": "11:17",
+      "timestamp": 1756045020843,
       "items": [
         {
-          "id": 12,
-          "name": "INSTAL",
-          "weight": 8,
-          "value": "15.00",
-          "total": "120.00",
-          "priceEdited": true
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.5,
+          "value": "6.00",
+          "total": "9.00",
+          "priceEdited": false
         }
       ],
       "finalized": true
@@ -276,17 +308,17 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "16:58",
-      "timestamp": 1755892717032,
+      "date": "2025-08-24",
+      "time": "11:25",
+      "timestamp": 1756045544755,
       "items": [
         {
-          "id": 1,
-          "name": "LATA",
-          "weight": 1.4,
-          "value": "7.00",
-          "total": "9.80",
-          "priceEdited": true
+          "id": 2,
+          "name": "FERRO",
+          "weight": 2.6,
+          "value": "0.40",
+          "total": "1.04",
+          "priceEdited": false
         }
       ],
       "finalized": true
@@ -296,37 +328,37 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "17:16",
-      "timestamp": 1755893800053,
+      "date": "2025-08-24",
+      "time": "11:36",
+      "timestamp": 1756046211224,
       "items": [
         {
-          "id": 2,
-          "name": "FERRO",
-          "weight": 1,
-          "value": "638.12",
-          "total": "638.12",
-          "priceEdited": true
+          "id": 1,
+          "name": "LATA",
+          "weight": 7.5,
+          "value": "6.00",
+          "total": "45.00",
+          "priceEdited": false
         }
       ],
       "finalized": true
     },
     {
       "number": 9,
-      "operation": "venda",
+      "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "17:17",
-      "timestamp": 1755893879591,
+      "date": "2025-08-24",
+      "time": "11:42",
+      "timestamp": 1756046570196,
       "items": [
         {
-          "id": 2,
-          "name": "FERRO",
-          "weight": 1,
-          "value": "930.00",
-          "total": "930.00",
-          "priceEdited": true
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.7,
+          "value": "12.00",
+          "total": "8.40",
+          "priceEdited": false
         }
       ],
       "finalized": true
@@ -336,33 +368,198 @@
       "operation": "compra",
       "clientId": 1,
       "clientName": "Cliente Único",
-      "date": "2025-08-22",
-      "time": "17:19",
-      "timestamp": 1755893961807,
+      "date": "2025-08-24",
+      "time": "11:57",
+      "timestamp": 1756047431788,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.6,
+          "value": "7.00",
+          "total": "11.20",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 11,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "12:16",
+      "timestamp": 1756048563897,
       "items": [
         {
           "id": 2,
           "name": "FERRO",
-          "weight": 22.3,
+          "weight": 9.4,
           "value": "0.40",
-          "total": "8.92",
+          "total": "3.76",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 4.5,
+          "value": "7.00",
+          "total": "31.50",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 12,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "12:48",
+      "timestamp": 1756050495589,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 6,
+          "value": "7.00",
+          "total": "42.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 13,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "14:38",
+      "timestamp": 1756057085321,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 0.3,
+          "value": "6.00",
+          "total": "1.80",
+          "priceEdited": false
+        },
+        {
+          "id": 18,
+          "name": "INOX",
+          "weight": 30.4,
+          "value": "2.50",
+          "total": "76.00",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 4.8,
+          "value": "0.40",
+          "total": "1.92",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 15,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "15:10",
+      "timestamp": 1756059008896,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 2.1,
+          "value": "7.00",
+          "total": "14.70",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 16,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "15:44",
+      "timestamp": 1756061054582,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 2,
+          "value": "7.00",
+          "total": "14.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 17,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-24",
+      "time": "16:45",
+      "timestamp": 1756064724206,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 2.2,
+          "value": "6.00",
+          "total": "13.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
+    },
+    {
+      "number": 18,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "08:12",
+      "timestamp": 1756120346367,
+      "items": [
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 0.9,
+          "value": "3.50",
+          "total": "3.15",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 2,
+          "value": "6.00",
+          "total": "12.00",
           "priceEdited": false
         }
       ],
       "finalized": true
     }
   ],
-  "nextCommandNumber": 11,
-  "expenses": [
-    {
-      "id": 1,
-      "description": "Diversos",
-      "value": 39.5,
-      "date": "2025-08-22"
-    }
-  ],
-  "nextExpenseId": 2,
+  "nextCommandNumber": 19,
+  "expenses": [],
+  "nextExpenseId": 1,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-22T20:22:10.412Z"
+  "lastSync": "2025-08-25T11:23:41.058Z"
 }
