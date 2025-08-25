@@ -703,10 +703,16 @@
       "description": "Supermercado",
       "value": 39.5,
       "date": "2025-08-25"
+    },
+    {
+      "id": 2,
+      "description": "Mercado",
+      "value": 36,
+      "date": "2025-08-25"
     }
   ],
-  "nextExpenseId": 2,
+  "nextExpenseId": 3,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T11:39:59.745Z"
+  "lastSync": "2025-08-25T11:40:34.770Z"
 }
