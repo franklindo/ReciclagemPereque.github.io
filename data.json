@@ -946,9 +946,61 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 37,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "11:54",
+      "timestamp": 1756133693424,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.3,
+          "value": "12.00",
+          "total": "3.60",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 24.6,
+          "value": "0.40",
+          "total": "9.84",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 0.6,
+          "value": "7.00",
+          "total": "4.20",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 0.8,
+          "value": "2.00",
+          "total": "1.60",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.1,
+          "value": "12.00",
+          "total": "1.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 37,
+  "nextCommandNumber": 38,
   "expenses": [
     {
       "id": 1,
@@ -978,5 +1030,5 @@
   "nextExpenseId": 5,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T14:49:32.327Z"
+  "lastSync": "2025-08-25T15:05:41.601Z"
 }
