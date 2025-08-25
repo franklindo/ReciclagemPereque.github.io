@@ -1202,9 +1202,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 47,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-25",
+      "time": "15:48",
+      "timestamp": 1756147686366,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 3.6,
+          "value": "0.40",
+          "total": "1.44",
+          "priceEdited": false
+        },
+        {
+          "id": 21,
+          "name": "TV LED",
+          "weight": 1,
+          "value": "2.00",
+          "total": "2.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 47,
+  "nextCommandNumber": 48,
   "expenses": [
     {
       "id": 1,
@@ -1229,10 +1257,16 @@
       "description": "Pasta termica",
       "value": 30,
       "date": "2025-08-25"
+    },
+    {
+      "id": 5,
+      "description": "Passagem nikolas",
+      "value": 10,
+      "date": "2025-08-25"
     }
   ],
-  "nextExpenseId": 5,
+  "nextExpenseId": 6,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T17:09:29.218Z"
+  "lastSync": "2025-08-25T18:48:48.554Z"
 }
