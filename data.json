@@ -709,10 +709,16 @@
       "description": "Mercado",
       "value": 36,
       "date": "2025-08-25"
+    },
+    {
+      "id": 3,
+      "description": "Ovo",
+      "value": 12,
+      "date": "2025-08-25"
     }
   ],
-  "nextExpenseId": 3,
+  "nextExpenseId": 4,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-25T11:40:34.770Z"
+  "lastSync": "2025-08-25T11:47:24.907Z"
 }
