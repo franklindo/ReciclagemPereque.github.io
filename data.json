@@ -1482,9 +1482,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 59,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-26",
+      "time": "09:41",
+      "timestamp": 1756212106730,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.5,
+          "value": "6.00",
+          "total": "9.00",
+          "priceEdited": false
+        },
+        {
+          "id": 14,
+          "name": "FIO_MX",
+          "weight": 0.8,
+          "value": "2.00",
+          "total": "1.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 59,
+  "nextCommandNumber": 60,
   "expenses": [
     {
       "id": 1,
@@ -1520,5 +1548,5 @@
   "nextExpenseId": 6,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-26T12:33:51.114Z"
+  "lastSync": "2025-08-26T12:42:32.503Z"
 }
