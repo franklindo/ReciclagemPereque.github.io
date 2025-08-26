@@ -1662,10 +1662,36 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 67,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-26",
+      "time": "12:24",
+      "timestamp": 1756221890550,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 20,
+          "value": "1.00",
+          "total": "20.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 66,
+  "nextCommandNumber": 68,
   "expenses": [
+    {
+      "id": 6,
+      "description": "Almoco",
+      "value": 44,
+      "date": "2025-08-26"
+    },
     {
       "id": 1,
       "description": "Supermercado",
@@ -1697,8 +1723,8 @@
       "date": "2025-08-25"
     }
   ],
-  "nextExpenseId": 6,
+  "nextExpenseId": 7,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-26T15:03:38.905Z"
+  "lastSync": "2025-08-26T15:25:18.675Z"
 }
