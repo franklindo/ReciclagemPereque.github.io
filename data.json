@@ -1550,9 +1550,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 62,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-26",
+      "time": "11:37",
+      "timestamp": 1756219038100,
+      "items": [
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 2,
+          "value": "7.00",
+          "total": "14.00",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 0.7,
+          "value": "3.50",
+          "total": "2.45",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 62,
+  "nextCommandNumber": 63,
   "expenses": [
     {
       "id": 1,
@@ -1588,5 +1616,5 @@
   "nextExpenseId": 6,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-26T13:37:57.899Z"
+  "lastSync": "2025-08-26T14:37:46.223Z"
 }
