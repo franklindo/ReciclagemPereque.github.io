@@ -1946,9 +1946,53 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 78,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "10:50",
+      "timestamp": 1756302646206,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.4,
+          "value": "12.00",
+          "total": "4.80",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 6.5,
+          "value": "0.40",
+          "total": "2.60",
+          "priceEdited": false
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 0.1,
+          "value": "4.00",
+          "total": "0.40",
+          "priceEdited": false
+        },
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1.2,
+          "value": "6.00",
+          "total": "7.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 78,
+  "nextCommandNumber": 79,
   "expenses": [
     {
       "id": 6,
@@ -1996,5 +2040,5 @@
   "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T13:50:46.163Z"
+  "lastSync": "2025-08-27T13:52:15.771Z"
 }
