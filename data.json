@@ -1798,9 +1798,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 73,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "09:39",
+      "timestamp": 1756298378607,
+      "items": [
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 30.4,
+          "value": "2.00",
+          "total": "60.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 73,
+  "nextCommandNumber": 74,
   "expenses": [
     {
       "id": 1,
@@ -1842,5 +1862,5 @@
   "nextExpenseId": 7,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T12:10:32.974Z"
+  "lastSync": "2025-08-27T12:40:05.469Z"
 }
