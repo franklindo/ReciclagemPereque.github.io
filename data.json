@@ -2266,9 +2266,53 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 90,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "16:00",
+      "timestamp": 1756321204706,
+      "items": [
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.7,
+          "value": "32.00",
+          "total": "22.40",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.9,
+          "value": "12.00",
+          "total": "10.80",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 1.1,
+          "value": "7.00",
+          "total": "7.70",
+          "priceEdited": false
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 0.3,
+          "value": "4.00",
+          "total": "1.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 90,
+  "nextCommandNumber": 91,
   "expenses": [
     {
       "id": 6,
@@ -2316,5 +2360,5 @@
   "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T18:46:23.932Z"
+  "lastSync": "2025-08-27T19:01:16.250Z"
 }
