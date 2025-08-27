@@ -1838,10 +1838,84 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 75,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "10:06",
+      "timestamp": 1756299972500,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 4.5,
+          "value": "0.40",
+          "total": "1.80",
+          "priceEdited": false
+        },
+        {
+          "id": 6,
+          "name": "CADEIRA",
+          "weight": 2,
+          "value": "3.00",
+          "total": "6.00",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 3.4,
+          "value": "0.40",
+          "total": "1.36",
+          "priceEdited": false
+        },
+        {
+          "id": 18,
+          "name": "INOX",
+          "weight": 1.1,
+          "value": "2.50",
+          "total": "2.75",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 10.2,
+          "value": "2.00",
+          "total": "20.40",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 2.3,
+          "value": "12.00",
+          "total": "27.60",
+          "priceEdited": false
+        },
+        {
+          "id": 9,
+          "name": "ACO1",
+          "weight": 5.9,
+          "value": "35.00",
+          "total": "206.50",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 75,
+  "nextCommandNumber": 76,
   "expenses": [
+    {
+      "id": 6,
+      "description": "Almoco",
+      "value": 44,
+      "date": "2025-08-26"
+    },
     {
       "id": 1,
       "description": "Supermercado",
@@ -1873,14 +1947,14 @@
       "date": "2025-08-25"
     },
     {
-      "id": 6,
-      "description": "Almoco",
-      "value": 44,
-      "date": "2025-08-26"
+      "id": 7,
+      "description": "Papel",
+      "value": 32,
+      "date": "2025-08-27"
     }
   ],
-  "nextExpenseId": 7,
+  "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T12:42:04.525Z"
+  "lastSync": "2025-08-27T13:11:52.760Z"
 }
