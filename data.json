@@ -2426,9 +2426,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 96,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "16:57",
+      "timestamp": 1756324657634,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.9,
+          "value": "12.00",
+          "total": "10.80",
+          "priceEdited": false
+        },
+        {
+          "id": 13,
+          "name": "CABO",
+          "weight": 1.9,
+          "value": "15.00",
+          "total": "28.50",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 96,
+  "nextCommandNumber": 97,
   "expenses": [
     {
       "id": 6,
@@ -2476,5 +2504,5 @@
   "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T19:41:18.226Z"
+  "lastSync": "2025-08-27T19:58:31.611Z"
 }
