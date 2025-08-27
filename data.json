@@ -2246,9 +2246,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 89,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "15:43",
+      "timestamp": 1756320212708,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 1,
+          "value": "6.00",
+          "total": "6.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 89,
+  "nextCommandNumber": 90,
   "expenses": [
     {
       "id": 6,
@@ -2296,5 +2316,5 @@
   "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T18:21:48.555Z"
+  "lastSync": "2025-08-27T18:46:23.932Z"
 }
