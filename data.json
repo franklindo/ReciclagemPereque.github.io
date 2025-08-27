@@ -2310,9 +2310,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 91,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-27",
+      "time": "16:07",
+      "timestamp": 1756321641872,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 66.3,
+          "value": "0.40",
+          "total": "26.52",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 91,
+  "nextCommandNumber": 92,
   "expenses": [
     {
       "id": 6,
@@ -2360,5 +2380,5 @@
   "nextExpenseId": 8,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-27T19:01:16.250Z"
+  "lastSync": "2025-08-27T19:07:29.743Z"
 }
