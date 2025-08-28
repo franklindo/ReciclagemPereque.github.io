@@ -3290,9 +3290,45 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 129,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "16:49",
+      "timestamp": 1756410592175,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 4.8,
+          "value": "0.40",
+          "total": "1.92",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 3.4,
+          "value": "12.00",
+          "total": "40.80",
+          "priceEdited": false
+        },
+        {
+          "id": 14,
+          "name": "FIO_MX",
+          "weight": 1.3,
+          "value": "2.00",
+          "total": "2.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 129,
+  "nextCommandNumber": 130,
   "expenses": [
     {
       "id": 8,
@@ -3352,5 +3388,5 @@
   "nextExpenseId": 10,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T19:43:32.330Z"
+  "lastSync": "2025-08-28T19:50:36.696Z"
 }
