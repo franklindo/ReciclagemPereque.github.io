@@ -2758,9 +2758,45 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 110,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "13:41",
+      "timestamp": 1756399267646,
+      "items": [
+        {
+          "id": 19,
+          "name": "MOTOR_G",
+          "weight": 1,
+          "value": "12.00",
+          "total": "12.00",
+          "priceEdited": false
+        },
+        {
+          "id": 16,
+          "name": "RADIADOR",
+          "weight": 2.2,
+          "value": "7.00",
+          "total": "15.40",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.7,
+          "value": "32.00",
+          "total": "22.40",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 110,
+  "nextCommandNumber": 111,
   "expenses": [
     {
       "id": 7,
@@ -2814,5 +2850,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T16:39:03.293Z"
+  "lastSync": "2025-08-28T16:50:04.259Z"
 }
