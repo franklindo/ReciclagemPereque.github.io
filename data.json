@@ -2626,9 +2626,45 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 105,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "12:21",
+      "timestamp": 1756394480833,
+      "items": [
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.1,
+          "value": "32.00",
+          "total": "3.20",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.2,
+          "value": "12.00",
+          "total": "2.40",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.1,
+          "value": "12.00",
+          "total": "1.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 105,
+  "nextCommandNumber": 106,
   "expenses": [
     {
       "id": 7,
@@ -2682,5 +2718,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T14:34:19.992Z"
+  "lastSync": "2025-08-28T15:22:01.649Z"
 }
