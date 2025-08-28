@@ -2814,9 +2814,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 112,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "13:55",
+      "timestamp": 1756400104584,
+      "items": [
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 1.4,
+          "value": "32.00",
+          "total": "44.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 112,
+  "nextCommandNumber": 113,
   "expenses": [
     {
       "id": 7,
@@ -2870,5 +2890,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T16:50:16.725Z"
+  "lastSync": "2025-08-28T16:55:48.655Z"
 }
