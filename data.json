@@ -2918,9 +2918,61 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 116,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "14:15",
+      "timestamp": 1756401349017,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 16.4,
+          "value": "0.40",
+          "total": "6.56",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 1.4,
+          "value": "7.00",
+          "total": "9.80",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.2,
+          "value": "32.00",
+          "total": "6.40",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 0.5,
+          "value": "3.50",
+          "total": "1.75",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 0.1,
+          "value": "3.50",
+          "total": "0.35",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 116,
+  "nextCommandNumber": 117,
   "expenses": [
     {
       "id": 7,
@@ -2974,5 +3026,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T17:10:57.399Z"
+  "lastSync": "2025-08-28T17:17:22.394Z"
 }
