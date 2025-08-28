@@ -61,28 +61,28 @@
       "name": "ACO1",
       "icon": "-",
       "buyPrice": 35,
-      "sellPrice": 48.5
+      "sellPrice": 50
     },
     {
       "id": 10,
       "name": "ACO2",
       "icon": "-",
       "buyPrice": 32,
-      "sellPrice": 45.5
+      "sellPrice": 47
     },
     {
       "id": 11,
       "name": "METAL",
       "icon": "-",
       "buyPrice": 12,
-      "sellPrice": 28
+      "sellPrice": 29
     },
     {
       "id": 12,
       "name": "INSTAL",
       "icon": "-",
       "buyPrice": 12,
-      "sellPrice": 22
+      "sellPrice": 23
     },
     {
       "id": 13,
@@ -3154,9 +3154,77 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 125,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "15:41",
+      "timestamp": 1756406471308,
+      "items": [
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 17,
+          "value": "47.00",
+          "total": "799.00",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.1,
+          "value": "47.00",
+          "total": "4.70",
+          "priceEdited": false
+        },
+        {
+          "id": 9,
+          "name": "ACO1",
+          "weight": 9.7,
+          "value": "50.00",
+          "total": "485.00",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 31,
+          "value": "23.00",
+          "total": "713.00",
+          "priceEdited": false
+        },
+        {
+          "id": 13,
+          "name": "CABO",
+          "weight": 11.1,
+          "value": "37.50",
+          "total": "416.25",
+          "priceEdited": true
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.9,
+          "value": "47.00",
+          "total": "42.30",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 13.7,
+          "value": "29.00",
+          "total": "397.30",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 125,
+  "nextCommandNumber": 126,
   "expenses": [
     {
       "id": 7,
@@ -3210,5 +3278,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T18:32:56.524Z"
+  "lastSync": "2025-08-28T18:54:29.927Z"
 }
