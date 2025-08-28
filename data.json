@@ -3222,9 +3222,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 126,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "15:55",
+      "timestamp": 1756407313468,
+      "items": [
+        {
+          "id": 14,
+          "name": "FIO_MX",
+          "weight": 7.4,
+          "value": "11.00",
+          "total": "81.40",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 126,
+  "nextCommandNumber": 127,
   "expenses": [
     {
       "id": 7,
@@ -3278,5 +3298,5 @@
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T18:54:29.927Z"
+  "lastSync": "2025-08-28T18:55:42.353Z"
 }
