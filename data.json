@@ -2542,16 +2542,54 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 101,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "10:35",
+      "timestamp": 1756388140513,
+      "items": [
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 2,
+          "value": "3.50",
+          "total": "7.00",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 0.9,
+          "value": "32.00",
+          "total": "28.80",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 0.1,
+          "value": "12.00",
+          "total": "1.20",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 3.4,
+          "value": "12.00",
+          "total": "40.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 101,
+  "nextCommandNumber": 102,
   "expenses": [
-    {
-      "id": 8,
-      "description": "Ovo",
-      "value": 17.9,
-      "date": "2025-08-28"
-    },
     {
       "id": 7,
       "description": "Papel",
@@ -2593,10 +2631,16 @@
       "description": "Passagem nikolas",
       "value": 10,
       "date": "2025-08-25"
+    },
+    {
+      "id": 8,
+      "description": "Ovo",
+      "value": 17.9,
+      "date": "2025-08-28"
     }
   ],
   "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T13:02:43.227Z"
+  "lastSync": "2025-08-28T13:38:07.345Z"
 }
