@@ -2494,10 +2494,42 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 99,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-28",
+      "time": "09:26",
+      "timestamp": 1756383968153,
+      "items": [
+        {
+          "id": 13,
+          "name": "CABO",
+          "weight": 7,
+          "value": "15.00",
+          "total": "105.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 99,
+  "nextCommandNumber": 100,
   "expenses": [
+    {
+      "id": 8,
+      "description": "Ovo",
+      "value": 17.9,
+      "date": "2025-08-28"
+    },
+    {
+      "id": 7,
+      "description": "Papel",
+      "value": 32,
+      "date": "2025-08-27"
+    },
     {
       "id": 6,
       "description": "Almoco",
@@ -2533,16 +2565,10 @@
       "description": "Passagem nikolas",
       "value": 10,
       "date": "2025-08-25"
-    },
-    {
-      "id": 7,
-      "description": "Papel",
-      "value": 32,
-      "date": "2025-08-27"
     }
   ],
-  "nextExpenseId": 8,
+  "nextExpenseId": 9,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-28T11:36:46.485Z"
+  "lastSync": "2025-08-28T12:26:38.626Z"
 }
