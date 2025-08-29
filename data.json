@@ -3490,9 +3490,29 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 139,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-29",
+      "time": "12:24",
+      "timestamp": 1756481045315,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 0.9,
+          "value": "12.00",
+          "total": "10.80",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 139,
+  "nextCommandNumber": 140,
   "expenses": [
     {
       "id": 8,
@@ -3552,5 +3572,5 @@
   "nextExpenseId": 10,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-29T15:23:33.451Z"
+  "lastSync": "2025-08-29T15:24:28.707Z"
 }
