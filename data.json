@@ -3790,9 +3790,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 152,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-29",
+      "time": "15:49",
+      "timestamp": 1756493381211,
+      "items": [
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 5,
+          "value": "7.00",
+          "total": "35.00",
+          "priceEdited": false
+        },
+        {
+          "id": 6,
+          "name": "CADEIRA",
+          "weight": 1,
+          "value": "3.00",
+          "total": "3.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 152,
+  "nextCommandNumber": 153,
   "expenses": [
     {
       "id": 8,
@@ -3852,5 +3880,5 @@
   "nextExpenseId": 10,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-29T18:44:50.984Z"
+  "lastSync": "2025-08-29T18:50:25.701Z"
 }
