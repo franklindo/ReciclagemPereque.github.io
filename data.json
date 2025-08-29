@@ -3462,9 +3462,37 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 138,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-29",
+      "time": "12:22",
+      "timestamp": 1756480973848,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 12.9,
+          "value": "12.00",
+          "total": "154.80",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 0.2,
+          "value": "2.00",
+          "total": "0.40",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 138,
+  "nextCommandNumber": 139,
   "expenses": [
     {
       "id": 8,
@@ -3524,5 +3552,5 @@
   "nextExpenseId": 10,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-29T15:09:24.482Z"
+  "lastSync": "2025-08-29T15:23:33.451Z"
 }
