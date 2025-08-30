@@ -3918,16 +3918,38 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 158,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-30",
+      "time": "11:06",
+      "timestamp": 1756562795751,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 0.4,
+          "value": "6.00",
+          "total": "2.40",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 5.9,
+          "value": "0.40",
+          "total": "2.36",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 158,
+  "nextCommandNumber": 159,
   "expenses": [
-    {
-      "id": 10,
-      "description": "Ovo",
-      "value": 11.6,
-      "date": "2025-08-30"
-    },
     {
       "id": 8,
       "description": "Ovo",
@@ -3981,10 +4003,16 @@
       "description": "Passagem nikolas",
       "value": 10,
       "date": "2025-08-25"
+    },
+    {
+      "id": 10,
+      "description": "Ovo",
+      "value": 11.6,
+      "date": "2025-08-30"
     }
   ],
   "nextExpenseId": 11,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-30T13:44:51.131Z"
+  "lastSync": "2025-08-30T14:07:04.884Z"
 }
