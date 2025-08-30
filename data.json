@@ -3986,9 +3986,69 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 162,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-30",
+      "time": "11:43",
+      "timestamp": 1756564999385,
+      "items": [
+        {
+          "id": 18,
+          "name": "INOX",
+          "weight": 0.7,
+          "value": "2.50",
+          "total": "1.75",
+          "priceEdited": false
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 5.1,
+          "value": "0.40",
+          "total": "2.04",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 5.5,
+          "value": "12.00",
+          "total": "66.00",
+          "priceEdited": false
+        },
+        {
+          "id": 18,
+          "name": "INOX",
+          "weight": 0.8,
+          "value": "2.50",
+          "total": "2.00",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 2.3,
+          "value": "2.00",
+          "total": "4.60",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 0.6,
+          "value": "7.00",
+          "total": "4.20",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 161,
+  "nextCommandNumber": 163,
   "expenses": [
     {
       "id": 8,
@@ -4054,5 +4114,5 @@
   "nextExpenseId": 11,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-30T14:11:17.425Z"
+  "lastSync": "2025-08-30T14:46:25.321Z"
 }
