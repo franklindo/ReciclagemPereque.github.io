@@ -4046,9 +4046,45 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 163,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-08-31",
+      "time": "08:18",
+      "timestamp": 1756639121822,
+      "items": [
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 5.8,
+          "value": "47.00",
+          "total": "272.60",
+          "priceEdited": false
+        },
+        {
+          "id": 9,
+          "name": "ACO1",
+          "weight": 2,
+          "value": "50.00",
+          "total": "100.00",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 7.4,
+          "value": "29.00",
+          "total": "214.60",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 163,
+  "nextCommandNumber": 164,
   "expenses": [
     {
       "id": 8,
@@ -4114,5 +4150,5 @@
   "nextExpenseId": 11,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-30T14:46:25.321Z"
+  "lastSync": "2025-08-31T11:20:53.617Z"
 }
