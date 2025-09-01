@@ -4118,10 +4118,44 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 165,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-01",
+      "time": "08:28",
+      "timestamp": 1756726101864,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 13,
+          "value": "7.00",
+          "total": "91.00",
+          "priceEdited": true
+        },
+        {
+          "id": 6,
+          "name": "CADEIRA",
+          "weight": 1,
+          "value": "3.00",
+          "total": "3.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 165,
+  "nextCommandNumber": 166,
   "expenses": [
+    {
+      "id": 10,
+      "description": "Ovo",
+      "value": 11.6,
+      "date": "2025-08-30"
+    },
     {
       "id": 8,
       "description": "Ovo",
@@ -4177,14 +4211,14 @@
       "date": "2025-08-25"
     },
     {
-      "id": 10,
-      "description": "Ovo",
-      "value": 11.6,
-      "date": "2025-08-30"
+      "id": 11,
+      "description": "Aluguel mes 9",
+      "value": 2500,
+      "date": "2025-08-31"
     }
   ],
-  "nextExpenseId": 11,
+  "nextExpenseId": 12,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-08-31T11:56:27.091Z"
+  "lastSync": "2025-09-01T11:31:03.070Z"
 }
