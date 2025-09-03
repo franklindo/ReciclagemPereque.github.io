@@ -4326,10 +4326,48 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 176,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-03",
+      "time": "16:27",
+      "timestamp": 1756927631975,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 1421.5,
+          "value": "1.00",
+          "total": "1421.50",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 175,
+  "nextCommandNumber": 177,
   "expenses": [
+    {
+      "id": 13,
+      "description": "Mercado",
+      "value": 36,
+      "date": "2025-09-03"
+    },
+    {
+      "id": 14,
+      "description": "Banana",
+      "value": 10,
+      "date": "2025-09-03"
+    },
+    {
+      "id": 15,
+      "description": "Ovo",
+      "value": 17,
+      "date": "2025-09-03"
+    },
     {
       "id": 12,
       "description": "Agua passagem",
@@ -4403,14 +4441,14 @@
       "date": "2025-08-25"
     },
     {
-      "id": 13,
-      "description": "Mercado",
-      "value": 36,
+      "id": 16,
+      "description": "Passagem",
+      "value": 10,
       "date": "2025-09-03"
     }
   ],
-  "nextExpenseId": 14,
+  "nextExpenseId": 17,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-03T15:39:39.759Z"
+  "lastSync": "2025-09-03T19:29:37.660Z"
 }
