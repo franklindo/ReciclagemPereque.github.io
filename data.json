@@ -4286,10 +4286,36 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 173,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-03",
+      "time": "09:15",
+      "timestamp": 1756901729808,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 564,
+          "value": "9.50",
+          "total": "5358.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 173,
+  "nextCommandNumber": 174,
   "expenses": [
+    {
+      "id": 12,
+      "description": "Agua passagem",
+      "value": 35.16,
+      "date": "2025-09-01"
+    },
     {
       "id": 11,
       "description": "Aluguel mes 9",
@@ -4357,14 +4383,14 @@
       "date": "2025-08-25"
     },
     {
-      "id": 12,
-      "description": "Agua passagem",
-      "value": 35.16,
-      "date": "2025-09-01"
+      "id": 13,
+      "description": "Mercado",
+      "value": 36,
+      "date": "2025-09-03"
     }
   ],
-  "nextExpenseId": 13,
+  "nextExpenseId": 14,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-03T11:10:13.884Z"
+  "lastSync": "2025-09-03T12:16:05.058Z"
 }
