@@ -4446,9 +4446,77 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 182,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-06",
+      "time": "08:54",
+      "timestamp": 1757159697450,
+      "items": [
+        {
+          "id": 14,
+          "name": "FIO_MX",
+          "weight": 4.1,
+          "value": "11.00",
+          "total": "45.10",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 39,
+          "value": "47.00",
+          "total": "1833.00",
+          "priceEdited": false
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 6.5,
+          "value": "47.00",
+          "total": "305.50",
+          "priceEdited": false
+        },
+        {
+          "id": 13,
+          "name": "CABO",
+          "weight": 6.2,
+          "value": "36.50",
+          "total": "226.30",
+          "priceEdited": false
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 42.5,
+          "value": "23.00",
+          "total": "977.50",
+          "priceEdited": false
+        },
+        {
+          "id": 9,
+          "name": "ACO1",
+          "weight": 17.2,
+          "value": "50.00",
+          "total": "860.00",
+          "priceEdited": false
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 31,
+          "value": "29.00",
+          "total": "899.00",
+          "priceEdited": false
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 182,
+  "nextCommandNumber": 183,
   "expenses": [
     {
       "id": 17,
@@ -4562,5 +4630,5 @@
   "nextExpenseId": 19,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-06T11:39:18.798Z"
+  "lastSync": "2025-09-06T11:58:14.102Z"
 }
