@@ -4386,10 +4386,36 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 179,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-06",
+      "time": "08:30",
+      "timestamp": 1757158202708,
+      "items": [
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 10,
+          "value": "35.00",
+          "total": "350.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 179,
+  "nextCommandNumber": 180,
   "expenses": [
+    {
+      "id": 17,
+      "description": "Luz Passagem super",
+      "value": 655.6,
+      "date": "2025-09-05"
+    },
     {
       "id": 13,
       "description": "Mercado",
@@ -4406,6 +4432,12 @@
       "id": 15,
       "description": "Ovo",
       "value": 17,
+      "date": "2025-09-03"
+    },
+    {
+      "id": 16,
+      "description": "Passagem",
+      "value": 10,
       "date": "2025-09-03"
     },
     {
@@ -4481,14 +4513,14 @@
       "date": "2025-08-25"
     },
     {
-      "id": 16,
-      "description": "Passagem",
-      "value": 10,
-      "date": "2025-09-03"
+      "id": 18,
+      "description": "Dia 21",
+      "value": 1000,
+      "date": "2025-09-05"
     }
   ],
-  "nextExpenseId": 17,
+  "nextExpenseId": 19,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-05T11:08:53.785Z"
+  "lastSync": "2025-09-06T11:30:26.566Z"
 }
