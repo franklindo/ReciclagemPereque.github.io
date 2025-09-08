@@ -4622,16 +4622,134 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 190,
+      "operation": "venda",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-08",
+      "time": "14:41",
+      "timestamp": 1757353278941,
+      "items": [
+        {
+          "id": 1,
+          "name": "LATA",
+          "weight": 341.3,
+          "value": "9.50",
+          "total": "3242.35",
+          "priceEdited": true
+        },
+        {
+          "id": 12,
+          "name": "INSTAL",
+          "weight": 2,
+          "value": "23.00",
+          "total": "46.00",
+          "priceEdited": false
+        },
+        {
+          "id": 5,
+          "name": "BLOCO",
+          "weight": 105.8,
+          "value": "6.00",
+          "total": "634.80",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 121,
+          "value": "10.00",
+          "total": "1210.00",
+          "priceEdited": false
+        },
+        {
+          "id": 3,
+          "name": "PERFIL",
+          "weight": 113.9,
+          "value": "10.00",
+          "total": "1139.00",
+          "priceEdited": false
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 63,
+          "value": "8.00",
+          "total": "504.00",
+          "priceEdited": true
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 39.4,
+          "value": "8.00",
+          "total": "315.20",
+          "priceEdited": true
+        },
+        {
+          "id": 4,
+          "name": "CHAPA",
+          "weight": 46,
+          "value": "8.00",
+          "total": "368.00",
+          "priceEdited": true
+        },
+        {
+          "id": 7,
+          "name": "PANELA",
+          "weight": 39,
+          "value": "9.00",
+          "total": "351.00",
+          "priceEdited": true
+        },
+        {
+          "id": 8,
+          "name": "RODA",
+          "weight": 9,
+          "value": "12.00",
+          "total": "108.00",
+          "priceEdited": false
+        },
+        {
+          "id": 9,
+          "name": "ACO1",
+          "weight": 17.5,
+          "value": "51.00",
+          "total": "892.50",
+          "priceEdited": true
+        },
+        {
+          "id": 10,
+          "name": "ACO2",
+          "weight": 5.9,
+          "value": "49.00",
+          "total": "289.10",
+          "priceEdited": true
+        },
+        {
+          "id": 11,
+          "name": "METAL",
+          "weight": 13.1,
+          "value": "30.00",
+          "total": "393.00",
+          "priceEdited": true
+        },
+        {
+          "id": 18,
+          "name": "INOX",
+          "weight": 16.6,
+          "value": "4.00",
+          "total": "66.40",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 188,
+  "nextCommandNumber": 191,
   "expenses": [
-    {
-      "id": 19,
-      "description": "Banana",
-      "value": 11.2,
-      "date": "2025-09-08"
-    },
     {
       "id": 17,
       "description": "Luz Passagem super",
@@ -4739,10 +4857,16 @@
       "description": "Passagem nikolas",
       "value": 10,
       "date": "2025-08-25"
+    },
+    {
+      "id": 19,
+      "description": "Banana",
+      "value": 11.2,
+      "date": "2025-09-08"
     }
   ],
   "nextExpenseId": 20,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-08T12:13:05.732Z"
+  "lastSync": "2025-09-08T17:45:03.974Z"
 }
