@@ -4786,10 +4786,42 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 193,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-08",
+      "time": "14:52",
+      "timestamp": 1757353930045,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 685,
+          "value": "1.00",
+          "total": "685.00",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 193,
+  "nextCommandNumber": 194,
   "expenses": [
+    {
+      "id": 19,
+      "description": "Banana",
+      "value": 11.2,
+      "date": "2025-09-08"
+    },
+    {
+      "id": 20,
+      "description": "Cafe",
+      "value": 21.3,
+      "date": "2025-09-08"
+    },
     {
       "id": 17,
       "description": "Luz Passagem super",
@@ -4897,16 +4929,10 @@
       "description": "Passagem nikolas",
       "value": 10,
       "date": "2025-08-25"
-    },
-    {
-      "id": 19,
-      "description": "Banana",
-      "value": 11.2,
-      "date": "2025-09-08"
     }
   ],
-  "nextExpenseId": 20,
+  "nextExpenseId": 21,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-08T17:51:19.225Z"
+  "lastSync": "2025-09-08T17:52:25.927Z"
 }
