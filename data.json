@@ -214,12 +214,47 @@
         }
       ],
       "finalized": true
+    },
+    {
+      "number": 3,
+      "operation": "compra",
+      "clientId": 1,
+      "clientName": "Cliente Único",
+      "date": "2025-09-22",
+      "time": "08:49",
+      "timestamp": 1758541742537,
+      "items": [
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 1329.8,
+          "value": "1.00",
+          "total": "1329.80",
+          "priceEdited": true
+        },
+        {
+          "id": 2,
+          "name": "FERRO",
+          "weight": 1307.2,
+          "value": "1.00",
+          "total": "1307.20",
+          "priceEdited": true
+        }
+      ],
+      "finalized": true
     }
   ],
-  "nextCommandNumber": 3,
-  "expenses": [],
-  "nextExpenseId": 1,
+  "nextCommandNumber": 4,
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Racao",
+      "value": 20,
+      "date": "2025-09-22"
+    }
+  ],
+  "nextExpenseId": 2,
   "unfinishedCommands": {},
   "nextMaterialId": 25,
-  "lastSync": "2025-09-22T11:44:28.722Z"
+  "lastSync": "2025-09-22T11:49:35.191Z"
 }
